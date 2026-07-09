@@ -132,7 +132,7 @@
   }
 
   .card{
-    background:#0a0a0a;border:1px solid var(--line-soft);border-radius:2px;
+    background:#0a0a0a;border:1px solid var(--line);border-radius:2px;
     padding:26px 28px;position:relative;transition:border-color .25s ease, box-shadow .25s ease;
   }
   .card:hover{border-color:var(--fg);box-shadow:0 0 0 1px var(--fg);}
@@ -338,7 +338,7 @@ document.querySelectorAll('.pin').forEach(p=>p.addEventListener('click',()=>rend
 renderSektion('hamburg');
 
 const fachbereiche = [
-  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:"Sascha Hanke", role:"CCO &amp; Co-Owner, häppy", text:"Der größte Fachbereich im ADC. Klassische und moderne Werbekommunikation über alle Kanäle."},
+  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:"Sascha Hanke", role:"CCO &amp; Co-Owner, häppy", text:"Klassische und moderne Werbekommunikation über alle Kanäle."},
   {icon:"💻", accent:"var(--c-sky)", name:"Digitale Medien", who:"Burkhard Müller", role:"CDO, Mutabor — Präsidiumssprecher", text:"Digitale Produkte, Interfaces und Kampagnen."},
   {icon:"🎓", accent:"var(--c-gold)", name:"Forschung &amp; Lehre", who:"Prof. Richard Jung", role:"Professor für Kommunikationsdesign", text:"Verbindung von Hochschulen, Nachwuchs und Praxis."},
   {icon:"🏙️", accent:"var(--c-purple)", name:"Spatial Experience", who:"Prof. Roland Lambrette", role:"Gründer, Atelier Markgraph", text:"Kommunikation im Raum — von Messeauftritt bis Museum."},
@@ -350,9 +350,8 @@ document.getElementById('grid-fachbereiche').innerHTML = fachbereiche.map(f=>`
   <div class="card" style="--accent:${f.accent}">
     <div class="icon-wrap">${f.icon}</div>
     <h3>${f.name}</h3>
-    <div class="role">${f.role}</div>
     <p>${f.text}</p>
-    <div class="contact-line"><span class="who">${f.who}</span></div>
+    <div class="contact-line"><span class="who">${f.who}</span><span class="what">— ${f.role}</span></div>
   </div>`).join("");
 
 const initiativen = [
