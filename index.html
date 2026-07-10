@@ -157,10 +157,10 @@
     display:inline-block;margin-top:18px;color:#000;background:var(--fg);
     padding:9px 16px;font-size:13.5px;text-decoration:none;border-radius:2px;font-weight:600;
     font-family:'Archivo',sans-serif;letter-spacing:.01em;
-    border-bottom:3px solid var(--accent, transparent);
+    border:1px solid var(--fg);
     transition:background .2s ease, color .2s ease, border-color .2s ease;
   }
-  .cta:hover{background:#000;color:var(--fg);border:1px solid var(--fg);border-bottom:3px solid var(--accent, var(--fg));}
+  .cta:hover{background:#000;color:var(--fg);}
   .cta.secondary{background:none;border:1px solid var(--dim);color:var(--fg);}
 
   /* GRID CARDS */
@@ -287,6 +287,23 @@
         <div class="contact-line"><span class="who">Marion Fichtelmann</span><span class="what">— Publikationen &amp; Bestellungen (z.&nbsp;B. Pitch Survival Guide)</span></div>
         <p style="margin-top:18px;">Präsidiumssprecher aktuell: <strong>Burkhard Müller</strong> (CDO, Mutabor) · Vize-Präsidiumssprecherin: <strong>Dörte Spengler-Ahrens</strong> (Jung von Matt Group, Sektion Hamburg)</p>
       </div>
+      <div class="card" style="--accent:var(--c-sky)">
+        <div class="icon-wrap">🤝</div>
+        <h3>Sponsoring</h3>
+        <div class="role">Für Unternehmen</div>
+        <p>Der ADC ist ein nicht-gewinnorientierter Verein — alles, was der Club macht, passiert auch dank Sponsor:innen. Firmen werden Partner z.&nbsp;B. beim ADC Festival, der Design oder Digital Conference und erhalten Zugang zu Talenten, Reichweite und dem kreativen Netzwerk.</p>
+        <div class="contact-line"><span class="who">Valentin Götz</span><span class="what">— Ansprechpartner Partnerschaften</span></div>
+        <a class="cta" href="mailto:valentin.goetz@adc.de">valentin.goetz@adc.de</a>
+      </div>
+      <div class="card" style="--accent:var(--c-gold)">
+        <div class="icon-wrap">💛</div>
+        <h3>Fördermitglieder</h3>
+        <div class="role">Netzwerk für Unternehmen</div>
+        <p>Fördermitgliedschaft unterstützt die nicht-gewinnorientierte Arbeit des ADC — Programme wie ADC Future Females, ADC Future Diversity oder die Nachwuchsformate laufen nur dank dieser Förderung. Schon rund 30 Unternehmen sind dabei, von BBDO bis Getty Images.</p>
+        <div class="contact-line"><span class="who">Mitgliederbetreuung</span><span class="what">— Ansprechpartner:innen im ADC Büro</span></div>
+        <a class="cta" href="mailto:mitglieder@adc.de">mitglieder@adc.de</a>
+        <a class="cta secondary" href="tel:+4930590031032">(030) 590 0310-32</a>
+      </div>
     </div>
   </section>
 
@@ -356,12 +373,12 @@ document.getElementById('grid-fachbereiche').innerHTML = fachbereiche.map(f=>`
 
 const initiativen = [
   {icon:"🧭", accent:"var(--c-coral)", name:"Ideen-Dashboard Hamburg", role:"Mitmachen · offen für alle", text:"~24 laufende Ideen und Tickets der Sektion Hamburg — von Merch bis Fördermitgliedschaft. Der schnellste Weg, direkt mitzuarbeiten.", who:"André Hennen", link:{label:"Dashboard öffnen", url:"https://adc-hh-dashboard.vercel.app"}},
+  {icon:"🎓", accent:"var(--c-gold)", name:"ADC Talents", role:"Netzwerk für Nachwuchs", text:"Gewinner:innen des ADC Talent Award nutzen 5 Jahre kostenlos das gesamte ADC-Netzwerk.", who:"Sarah Köster (Sprecherin) · Etienne Wagner (Vize)"},
+  {icon:"👋", accent:"var(--c-indigo)", name:"ADC Welcome to Creativity", role:"Programm", text:"Einstiegsprogramm für alle, die frisch in die Kreativbranche kommen."},
   {icon:"👑", accent:"var(--c-pink)", name:"LADC — Ladies' Art Directors Club", role:"Netzwerk", text:"2024 von Dörte Spengler-Ahrens neu gestartet: Vernetzung, Empowerment und Sichtbarkeit für Frauen im Club.", who:"Dörte Spengler-Ahrens"},
   {icon:"🚀", accent:"var(--c-purple)", name:"ADC Future Females", role:"Programm", text:"Leadership-Programm für Frauen in der Kreativwirtschaft."},
   {icon:"🌍", accent:"var(--c-sky)", name:"ADC Future Diversity", role:"Programm", text:"„Kreativität braucht unterschiedliche Menschen.“ Diversity- und Age-Initiativen des Clubs."},
-  {icon:"🎓", accent:"var(--c-gold)", name:"ADC Talents", role:"Netzwerk für Nachwuchs", text:"Gewinner:innen des ADC Talent Award nutzen 5 Jahre kostenlos das gesamte ADC-Netzwerk.", who:"Sarah Köster (Sprecherin) · Etienne Wagner (Vize)"},
   {icon:"🤝", accent:"var(--c-teal)", name:"ADC Mentoring", role:"Programm", text:"Kostenloses Mentoring für alle in der Kreativwirtschaft — erfahrene Mitglieder begleiten Berufseinsteiger:innen."},
-  {icon:"👋", accent:"var(--c-indigo)", name:"ADC Welcome to Creativity", role:"Programm", text:"Einstiegsprogramm für alle, die frisch in die Kreativbranche kommen."},
   {icon:"⚡", accent:"var(--c-lime)", name:"Speed-Recruiting", role:"Event", text:"Die wohl schnellste Stellenbesetzung der Kreativszene — Talente treffen Agenturen direkt."},
   {icon:"💛", accent:"var(--c-gold)", name:"Fördermitglieder", role:"Netzwerk für Unternehmen", text:"Unternehmen, die den ADC finanziell unterstützen und Teil des Netzwerks werden."}
 ];
