@@ -62,13 +62,13 @@
   .sub{color:var(--dim);max-width:540px;margin:0 auto;font-size:14.5px;line-height:1.65;}
 
   /* COMPASS ROSE NAV */
-  .rose-zone{display:flex;justify-content:center;margin:44px 0 56px;}
-  .rose-wrap{position:relative;width:230px;height:230px;flex:none;}
+  .rose-zone{display:flex;justify-content:center;margin:44px 0 64px;}
+  .rose-wrap{position:relative;width:260px;height:260px;flex:none;}
   .rose-svg{width:100%;height:100%;display:block;}
   .rose-svg circle.ring{fill:none;stroke:var(--line);stroke-width:1;}
   .rose-svg circle.ring2{fill:none;stroke:var(--line-soft);stroke-width:1;}
   .rose-svg .tick{stroke:var(--line);stroke-width:1;}
-  .needle{transform-origin:115px 115px;transition:transform .65s cubic-bezier(.3,1.4,.4,1);}
+  .needle{transform-origin:130px 130px;transition:transform .65s cubic-bezier(.3,1.4,.4,1);}
   .needle polygon.n-half{fill:var(--fg);}
   .needle polygon.s-half{fill:rgba(255,255,255,.28);}
   .needle circle.hub{fill:#000;stroke:var(--fg);stroke-width:1.5;}
@@ -80,26 +80,16 @@
     display:flex;align-items:center;justify-content:center;
     transition:color .2s ease, background .2s ease, transform .2s ease;
   }
-  .rose-pt:hover{transform:scale(1.12);}
+  .rose-pt:hover{transform:scale(1.14);}
   .rose-pt.active{color:#000;background:var(--fg);}
   .rose-pt .sub-label{
     position:absolute;top:100%;left:50%;transform:translateX(-50%);
-    font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;letter-spacing:.04em;
-    text-transform:uppercase;color:rgba(255,255,255,.8);white-space:normal;width:110px;
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:500;letter-spacing:.03em;
+    text-transform:uppercase;color:rgba(255,255,255,.8);white-space:normal;width:104px;
     text-align:center;line-height:1.3;margin-top:8px;
   }
-  .pt-n{top:-6px;left:50%;transform:translateX(-50%);}
-  .pt-n:hover{transform:translateX(-50%) scale(1.12);}
-  .pt-o{right:-6px;top:50%;transform:translateY(-50%);}
-  .pt-o:hover{transform:translateY(-50%) scale(1.12);}
-  .pt-s{bottom:-6px;left:50%;transform:translateX(-50%);}
-  .pt-s:hover{transform:translateX(-50%) scale(1.12);}
-  .pt-w{left:-6px;top:50%;transform:translateY(-50%);}
-  .pt-w:hover{transform:translateY(-50%) scale(1.12);}
-  .pt-n.active{transform:translateX(-50%) scale(1);}
-  .pt-s.active{transform:translateX(-50%) scale(1);}
-  .pt-o.active{transform:translateY(-50%) scale(1);}
-  .pt-w.active{transform:translateY(-50%) scale(1);}
+  .rose-pt.sm{width:32px;height:32px;font-size:15px;font-weight:600;}
+  .rose-pt.sm .sub-label{font-size:9.5px;width:74px;margin-top:6px;letter-spacing:.02em;color:rgba(255,255,255,.55);}
 
   /* PANELS */
   .panel{display:none;animation:fade .4s ease;}
@@ -118,17 +108,24 @@
   .pin{cursor:pointer;}
   .pin .hit{cursor:pointer;}
   .pin circle.dot{fill:var(--dim2);stroke:#000;stroke-width:2;transition:all .2s ease;}
-  .pin circle.ping{fill:none;stroke:var(--fg);stroke-width:1;opacity:0;}
-  .pin.active circle.ping{opacity:1;animation:ping 1.6s ease-out infinite;}
+  .pin circle.ping{fill:none;stroke:var(--fg);stroke-width:2;opacity:.85;animation:ping 2.4s ease-out infinite;}
   .pin text{fill:var(--dim);font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.02em;transition:all .2s ease;}
   .pin:hover circle.dot{fill:var(--fg);}
-  .pin.active circle.dot{fill:var(--fg);r:7;}
+  .pin.active circle.dot{fill:var(--fg);r:8;}
+  .pin.active circle.ping{stroke-width:2.5;}
   .pin.active text, .pin:hover text{fill:var(--fg);font-weight:600;}
   .pin.mine circle.dot{fill:var(--fg);stroke:var(--fg);}
   .pin.mine text{font-weight:600;}
+  .pin:nth-of-type(1) circle.ping{animation-delay:0s;}
+  .pin:nth-of-type(2) circle.ping{animation-delay:.3s;}
+  .pin:nth-of-type(3) circle.ping{animation-delay:.6s;}
+  .pin:nth-of-type(4) circle.ping{animation-delay:.9s;}
+  .pin:nth-of-type(5) circle.ping{animation-delay:1.2s;}
+  .pin:nth-of-type(6) circle.ping{animation-delay:1.5s;}
+  .pin:nth-of-type(7) circle.ping{animation-delay:1.8s;}
   @keyframes ping{
-    0%{r:7;opacity:.9;}
-    100%{r:22;opacity:0;}
+    0%{r:8;opacity:.85;}
+    100%{r:28;opacity:0;}
   }
 
   .card{
@@ -174,6 +171,16 @@
 
   .buero-hero{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
   @media(max-width:720px){.buero-hero{grid-template-columns:1fr;}}
+  .subnav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:0 0 34px;}
+  .subnav-btn{
+    background:none;border:1px solid var(--line);color:var(--dim);cursor:pointer;
+    font-family:'Archivo',sans-serif;font-weight:600;font-size:13px;
+    padding:9px 20px;border-radius:20px;transition:all .2s ease;
+  }
+  .subnav-btn:hover{border-color:var(--fg);color:var(--fg);}
+  .subnav-btn.active{background:var(--fg);color:#000;border-color:var(--fg);}
+  .subpanel{display:none;animation:fade .3s ease;}
+  .subpanel.active{display:block;}
   address{font-style:normal;font-size:14px;line-height:1.7;color:var(--dim);}
 
   .footer-note{
@@ -196,19 +203,19 @@
 
   <div class="rose-zone">
     <div class="rose-wrap">
-      <svg class="rose-svg" viewBox="0 0 230 230">
-        <circle class="ring" cx="115" cy="115" r="98"/>
-        <circle class="ring2" cx="115" cy="115" r="80"/>
+      <svg class="rose-svg" viewBox="0 0 260 260">
+        <circle class="ring" cx="130" cy="130" r="100"/>
+        <circle class="ring2" cx="130" cy="130" r="82"/>
         <g class="needle" id="needle">
-          <polygon class="n-half" points="115,28 124,115 106,115"/>
-          <polygon class="s-half" points="115,202 124,115 106,115"/>
-          <circle class="hub" cx="115" cy="115" r="7"/>
+          <polygon class="n-half" points="130,38 140,130 120,130"/>
+          <polygon class="s-half" points="130,222 140,130 120,130"/>
+          <circle class="hub" cx="130" cy="130" r="7"/>
         </g>
       </svg>
-      <button class="rose-pt pt-n active" data-tab="sektionen" data-deg="0">🗺️<span class="sub-label">Sektionen</span></button>
-      <button class="rose-pt pt-o" data-tab="fachbereiche" data-deg="90">🎨<span class="sub-label">Fachbereiche</span></button>
-      <button class="rose-pt pt-s" data-tab="initiativen" data-deg="180">💡<span class="sub-label">Ideen &amp; Initiativen</span></button>
-      <button class="rose-pt pt-w" data-tab="buero" data-deg="270">🏛️<span class="sub-label">ADC Büro</span></button>
+      <button class="rose-pt active" data-tab="sektionen" data-deg="0" style="left:107px;top:7px;">🗺️<span class="sub-label">Sektionen</span></button>
+      <button class="rose-pt" data-tab="fachbereiche" data-deg="90" style="left:207px;top:107px;">🎨<span class="sub-label">Fachbereiche</span></button>
+      <button class="rose-pt" data-tab="initiativen" data-deg="180" style="left:107px;top:207px;">💡<span class="sub-label">Ideen &amp; Initiativen</span></button>
+      <button class="rose-pt" data-tab="ressourcen" data-deg="270" style="left:7px;top:107px;">🗂️<span class="sub-label">Büro &amp; Ressourcen</span></button>
     </div>
   </div>
 
@@ -266,44 +273,60 @@
     <div class="grid" id="grid-initiativen"></div>
   </section>
 
-  <!-- BÜRO -->
-  <section class="panel" id="panel-buero">
-    <p class="intro-line">Das Rückgrat des Clubs sitzt in Berlin und hält alles zusammen.</p>
-    <div class="buero-hero">
-      <div class="card" style="--accent:var(--c-gold)">
-        <div class="icon-wrap">🏛️</div>
-        <h3>ADC Büro Berlin</h3>
-        <div class="role">Geschäftsstelle</div>
-        <p>Rund 15 Angestellte organisieren Veranstaltungen, Publikationen, Seminare, Mentoring, PR, Marketing, Mitgliederbetreuung und Finanzen. Ein geschäftsführender Vorstand hält den Laden operativ zusammen; das 14-köpfige, ehrenamtliche Präsidium (die Sektions- und Fachbereichsvorstände) trifft die inhaltlichen Entscheidungen.</p>
-        <address>Art Directors Club für Deutschland e. V.<br>Salzufer 15–16, Kontorhaus<br>10587 Berlin</address>
-        <a class="cta" href="mailto:adc@adc.de">adc@adc.de</a>
-        <a class="cta secondary" href="https://www.adc.de/kontakt/" target="_blank">Kontaktformular</a>
+  <!-- RESSOURCEN (Büro, Formulare, CI) -->
+  <section class="panel" id="panel-ressourcen">
+    <p class="intro-line">Verwaltung, Formulare und CI — alles rund um Verein und Sektion an einem Ort.</p>
+    <div class="subnav">
+      <button class="subnav-btn active" data-sub="buero">ADC Büro</button>
+      <button class="subnav-btn" data-sub="formulare">Formulare</button>
+      <button class="subnav-btn" data-sub="ci">ADC CI</button>
+    </div>
+
+    <div class="subpanel active" id="sub-buero">
+      <div class="buero-hero">
+        <div class="card" style="--accent:var(--c-gold)">
+          <div class="icon-wrap">🏛️</div>
+          <h3>ADC Büro Berlin</h3>
+          <div class="role">Geschäftsstelle</div>
+          <p>Rund 15 Angestellte organisieren Veranstaltungen, Publikationen, Seminare, Mentoring, PR, Marketing, Mitgliederbetreuung und Finanzen. Ein geschäftsführender Vorstand hält den Laden operativ zusammen; das 14-köpfige, ehrenamtliche Präsidium (die Sektions- und Fachbereichsvorstände) trifft die inhaltlichen Entscheidungen.</p>
+          <address>Art Directors Club für Deutschland e. V.<br>Salzufer 15–16, Kontorhaus<br>10587 Berlin</address>
+          <a class="cta" href="mailto:adc@adc.de">adc@adc.de</a>
+          <a class="cta secondary" href="https://www.adc.de/kontakt/" target="_blank">Kontaktformular</a>
+        </div>
+        <div class="card" style="--accent:var(--c-pink)">
+          <div class="icon-wrap">📣</div>
+          <h3>PR &amp; Marketing</h3>
+          <div class="role">Ansprechpartnerinnen</div>
+          <div class="contact-line"><span class="who">Susann Ruscher</span><span class="what">— Senior Projektmanagerin PR &amp; Marketing</span></div>
+          <div class="contact-line"><span class="who">Marion Fichtelmann</span><span class="what">— Publikationen &amp; Bestellungen (z.&nbsp;B. Pitch Survival Guide)</span></div>
+          <p style="margin-top:18px;">Präsidiumssprecher aktuell: <strong>Burkhard Müller</strong> (CDO, Mutabor) · Vize-Präsidiumssprecherin: <strong>Dörte Spengler-Ahrens</strong> (Jung von Matt Group, Sektion Hamburg)</p>
+        </div>
+        <div class="card" style="--accent:var(--c-sky)">
+          <div class="icon-wrap">🤝</div>
+          <h3>Sponsoring</h3>
+          <div class="role">Für Unternehmen</div>
+          <p>Der ADC ist ein nicht-gewinnorientierter Verein — alles, was der Club macht, passiert auch dank Sponsor:innen. Firmen werden Partner z.&nbsp;B. beim ADC Festival, der Design oder Digital Conference und erhalten Zugang zu Talenten, Reichweite und dem kreativen Netzwerk.</p>
+          <div class="contact-line"><span class="who">Valentin Götz</span><span class="what">— Ansprechpartner Partnerschaften</span></div>
+          <a class="cta" href="mailto:valentin.goetz@adc.de">valentin.goetz@adc.de</a>
+        </div>
+        <div class="card" style="--accent:var(--c-gold)">
+          <div class="icon-wrap">💛</div>
+          <h3>Fördermitglieder</h3>
+          <div class="role">Netzwerk für Unternehmen</div>
+          <p>Fördermitgliedschaft unterstützt die nicht-gewinnorientierte Arbeit des ADC — Programme wie ADC Future Females, ADC Future Diversity oder die Nachwuchsformate laufen nur dank dieser Förderung. Schon rund 30 Unternehmen sind dabei, von BBDO bis Getty Images.</p>
+          <div class="contact-line"><span class="who">Mitgliederbetreuung</span><span class="what">— Ansprechpartner:innen im ADC Büro</span></div>
+          <a class="cta" href="mailto:mitglieder@adc.de">mitglieder@adc.de</a>
+          <a class="cta secondary" href="tel:+4930590031032">(030) 590 0310-32</a>
+        </div>
       </div>
-      <div class="card" style="--accent:var(--c-pink)">
-        <div class="icon-wrap">📣</div>
-        <h3>PR &amp; Marketing</h3>
-        <div class="role">Ansprechpartnerinnen</div>
-        <div class="contact-line"><span class="who">Susann Ruscher</span><span class="what">— Senior Projektmanagerin PR &amp; Marketing</span></div>
-        <div class="contact-line"><span class="who">Marion Fichtelmann</span><span class="what">— Publikationen &amp; Bestellungen (z.&nbsp;B. Pitch Survival Guide)</span></div>
-        <p style="margin-top:18px;">Präsidiumssprecher aktuell: <strong>Burkhard Müller</strong> (CDO, Mutabor) · Vize-Präsidiumssprecherin: <strong>Dörte Spengler-Ahrens</strong> (Jung von Matt Group, Sektion Hamburg)</p>
-      </div>
-      <div class="card" style="--accent:var(--c-sky)">
-        <div class="icon-wrap">🤝</div>
-        <h3>Sponsoring</h3>
-        <div class="role">Für Unternehmen</div>
-        <p>Der ADC ist ein nicht-gewinnorientierter Verein — alles, was der Club macht, passiert auch dank Sponsor:innen. Firmen werden Partner z.&nbsp;B. beim ADC Festival, der Design oder Digital Conference und erhalten Zugang zu Talenten, Reichweite und dem kreativen Netzwerk.</p>
-        <div class="contact-line"><span class="who">Valentin Götz</span><span class="what">— Ansprechpartner Partnerschaften</span></div>
-        <a class="cta" href="mailto:valentin.goetz@adc.de">valentin.goetz@adc.de</a>
-      </div>
-      <div class="card" style="--accent:var(--c-gold)">
-        <div class="icon-wrap">💛</div>
-        <h3>Fördermitglieder</h3>
-        <div class="role">Netzwerk für Unternehmen</div>
-        <p>Fördermitgliedschaft unterstützt die nicht-gewinnorientierte Arbeit des ADC — Programme wie ADC Future Females, ADC Future Diversity oder die Nachwuchsformate laufen nur dank dieser Förderung. Schon rund 30 Unternehmen sind dabei, von BBDO bis Getty Images.</p>
-        <div class="contact-line"><span class="who">Mitgliederbetreuung</span><span class="what">— Ansprechpartner:innen im ADC Büro</span></div>
-        <a class="cta" href="mailto:mitglieder@adc.de">mitglieder@adc.de</a>
-        <a class="cta secondary" href="tel:+4930590031032">(030) 590 0310-32</a>
-      </div>
+    </div>
+
+    <div class="subpanel" id="sub-formulare">
+      <div class="grid" id="grid-formulare"></div>
+    </div>
+
+    <div class="subpanel" id="sub-ci">
+      <div class="grid" id="grid-ci"></div>
     </div>
   </section>
 
@@ -392,6 +415,41 @@ document.getElementById('grid-initiativen').innerHTML = initiativen.map(i=>`
     ${i.link ? `<a class="cta" href="${i.link.url}" target="_blank">${i.link.label} ↗</a>` : ""}
   </div>`).join("");
 
+const formulare = [
+  {icon:"✍️", accent:"var(--c-coral)", name:"Mitgliedsantrag / Bewerbung", text:"Bewerbung mit bisherigen Kreativarbeiten nach ADC-Kriterien (Originalität, Klarheit, Überzeugungskraft, Machart, Freude) — inkl. Preisen aus mind. 4 verschiedenen Jahren. Ein Pate prüft die Bewerbung und stellt dich beim Sektions- bzw. Fachbereichstreffen vor, wo geheim abgestimmt wird. Mitgliedsbeitrag: 370&nbsp;€/Jahr.", status:"Stand 2020 · Namen teils veraltet · Update folgt", links:[{label:"Infos zur Mitgliedschaft (PDF)", url:"formulare/adc-mitgliedschaft-infos.pdf"},{label:"Bewerbungsbogen (PDF)", url:"formulare/adc-bewerbungsbogen.pdf"}]},
+  {icon:"🗳️", accent:"var(--c-indigo)", name:"Stimmübertragung / Vollmacht", text:"Wer bei der JHV nicht persönlich kann, überträgt seine Stimme per Vollmacht an ein anwesendes Mitglied.", status:"Vorlage folgt"},
+  {icon:"📝", accent:"var(--c-teal)", name:"Anträge & Anfragen an den Vorstand", text:"Formlos per E-Mail an mitglieder@adc.de, nach dem Muster „Ich beantrage, dass …“ — gefolgt von einer überzeugenden Begründung.", email:"mitglieder@adc.de"}
+];
+document.getElementById('grid-formulare').innerHTML = formulare.map(f=>`
+  <div class="card" style="--accent:${f.accent}">
+    <div class="icon-wrap">${f.icon}</div>
+    <h3>${f.name}</h3>
+    <p>${f.text}</p>
+    ${f.status ? `<span class="tag-transition">${f.status}</span>` : ""}
+    ${f.email ? `<a class="cta" href="mailto:${f.email}">${f.email}</a>` : ""}
+    ${(f.links||[]).map(l=>`<a class="cta" href="${l.url}" target="_blank">${l.label}</a>`).join(" ")}
+  </div>`).join("");
+
+const ci = [
+  {icon:"🔤", accent:"var(--c-sky)", name:"Typografie", text:"Schriften für Logo, Headlines und Fließtext — welche Weights wo eingesetzt werden.", status:"Guide folgt"},
+  {icon:"🎨", accent:"var(--c-purple)", name:"Farben", text:"Primär- und Sekundärfarben inkl. HEX/RGB-Werten für Digital- und Printanwendungen.", status:"Guide folgt"},
+  {icon:"🖼️", accent:"var(--c-lime)", name:"Logo & Bildmarke", text:"Logo-Dateien, Schutzraum, erlaubte und unerlaubte Anwendungen.", status:"Dateien folgen"},
+  {icon:"📐", accent:"var(--c-coral)", name:"Vorlagen", text:"PowerPoint/Keynote-Vorlagen, Briefpapier, Social-Templates für Sektionsarbeit.", status:"Vorlagen folgen"}
+];
+document.getElementById('grid-ci').innerHTML = ci.map(c=>`
+  <div class="card" style="--accent:${c.accent}">
+    <div class="icon-wrap">${c.icon}</div>
+    <h3>${c.name}</h3>
+    <p>${c.text}</p>
+    <span class="tag-transition">${c.status}</span>
+  </div>`).join("") + `
+  <div class="card" style="--accent:var(--c-gold)">
+    <div class="icon-wrap">🏛️</div>
+    <h3>Offizielles CI-Manual</h3>
+    <p>Das vollständige CI-Manual verwaltet das ADC Büro in Berlin zentral. Für Zugriff oder aktuelle Dateien einfach dort anfragen.</p>
+    <a class="cta" href="mailto:adc@adc.de">adc@adc.de</a>
+  </div>`;
+
 document.querySelectorAll('.rose-pt').forEach(btn=>{
   btn.addEventListener('click',()=>{
     document.querySelectorAll('.rose-pt').forEach(b=>b.classList.remove('active'));
@@ -399,6 +457,16 @@ document.querySelectorAll('.rose-pt').forEach(btn=>{
     btn.classList.add('active');
     document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
     document.getElementById('needle').style.transform = 'rotate(' + btn.dataset.deg + 'deg)';
+  });
+});
+
+document.querySelectorAll('.subnav-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const nav = btn.closest('.subnav');
+    nav.querySelectorAll('.subnav-btn').forEach(b=>b.classList.remove('active'));
+    nav.parentElement.querySelectorAll('.subpanel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('sub-'+btn.dataset.sub).classList.add('active');
   });
 });
 </script>
