@@ -104,6 +104,9 @@
   /* SEKTIONEN — map + list */
   .map-section{display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:start;}
   @media(max-width:820px){.map-section{grid-template-columns:1fr;}}
+  .sektion-list{display:flex;flex-direction:column;gap:16px;}
+  .map-holder{position:sticky;top:24px;}
+  @media(max-width:820px){.map-holder{position:static;}}
   #germany-map{width:100%;height:auto;}
   .pin{cursor:pointer;}
   .pin .hit{cursor:pointer;}
@@ -257,7 +260,7 @@
           </g>
         </svg>
       </div>
-      <div id="sektion-detail"></div>
+      <div id="sektion-list" class="sektion-list"></div>
     </div>
   </section>
 
@@ -358,12 +361,12 @@ const sektionen = {
     text:"Eine der mitgliederstärksten Sektionen im Süden."}
 };
 
-function renderSektion(key){
-  const s = sektionen[key];
-  const peopleHtml = s.people.map(p=>`<div class="contact-line"><span class="who">${p.who}</span><span class="what">— ${p.what}</span></div>`).join("");
-  const linksHtml = (s.links||[]).map(l=>`<a class="cta" href="${l.url}" target="_blank">${l.label} ↗</a>`).join(" ");
-  document.getElementById('sektion-detail').innerHTML = `
-    <div class="card" style="--accent:${s.accent}">
+function renderAllSektionen(){
+  const html = Object.entries(sektionen).map(([key, s])=>{
+    const peopleHtml = s.people.map(p=>`<div class="contact-line"><span class="who">${p.who}</span><span class="what">— ${p.what}</span></div>`).join("");
+    const linksHtml = (s.links||[]).map(l=>`<a class="cta" href="${l.url}" target="_blank">${l.label} ↗</a>`).join(" ");
+    return `
+    <div class="card" id="sektion-card-${key}" style="--accent:${s.accent}">
       <div class="icon-wrap">${s.emoji}</div>
       <h3>${s.name}</h3>
       <div class="role">${s.role}</div>
@@ -372,10 +375,17 @@ function renderSektion(key){
       ${s.transition ? `<span class="tag-transition">${s.transition}</span>` : ""}
       <div>${linksHtml}</div>
     </div>`;
-  document.querySelectorAll('.pin').forEach(p=>p.classList.toggle('active', p.dataset.city===key));
+  }).join("");
+  document.getElementById('sektion-list').innerHTML = html;
 }
-document.querySelectorAll('.pin').forEach(p=>p.addEventListener('click',()=>renderSektion(p.dataset.city)));
-renderSektion('hamburg');
+renderAllSektionen();
+
+document.querySelectorAll('.pin').forEach(p=>p.addEventListener('click',()=>{
+  const key = p.dataset.city;
+  document.querySelectorAll('.pin').forEach(pin=>pin.classList.toggle('active', pin.dataset.city===key));
+  const card = document.getElementById('sektion-card-'+key);
+  if(card) card.scrollIntoView({behavior:'smooth', block:'center'});
+}));
 
 const fachbereiche = [
   {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:"Sascha Hanke", role:"CCO &amp; Co-Owner, häppy", text:"Klassische und moderne Werbekommunikation über alle Kanäle."},
