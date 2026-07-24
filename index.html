@@ -388,13 +388,13 @@ document.querySelectorAll('.pin').forEach(p=>p.addEventListener('click',()=>{
 }));
 
 const fachbereiche = [
-  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:"Sascha Hanke", role:"CCO &amp; Co-Owner, häppy", text:"Klassische und moderne Werbekommunikation über alle Kanäle."},
+  {icon:"🎨", accent:"var(--c-teal)", name:"Design", who:"Elisabeth Plass", role:"Inhaberin &amp; CD, EIGA Design", text:"Corporate Design, Branding und visuelle Identität."},
   {icon:"💻", accent:"var(--c-sky)", name:"Digitale Medien", who:"Burkhard Müller", role:"CDO, Mutabor — Präsidiumssprecher", text:"Digitale Produkte, Interfaces und Kampagnen."},
-  {icon:"🎓", accent:"var(--c-gold)", name:"Forschung &amp; Lehre", who:"Prof. Richard Jung", role:"Professor für Kommunikationsdesign", text:"Verbindung von Hochschulen, Nachwuchs und Praxis."},
-  {icon:"🏙️", accent:"var(--c-purple)", name:"Spatial Experience", who:"Prof. Roland Lambrette", role:"Gründer, Atelier Markgraph", text:"Kommunikation im Raum — von Messeauftritt bis Museum."},
   {icon:"📰", accent:"var(--c-pink)", name:"Editorial", who:"Sonja Pham", role:"Stellv. Chefredakteurin, Grafikmagazin", text:"Wort- und Bildwelten in Zeitschriften, Verlagen und Publishing."},
   {icon:"🎬", accent:"var(--c-indigo)", name:"Film &amp; Ton", who:"Jan Fincke", role:"Managing Director &amp; Partner, CZAR Film", text:"Bewegtbild, Sound und alles, was läuft und klingt."},
-  {icon:"🎨", accent:"var(--c-teal)", name:"Design", who:"Elisabeth Plass", role:"Inhaberin &amp; CD, EIGA Design", text:"Corporate Design, Branding und visuelle Identität."}
+  {icon:"🎓", accent:"var(--c-gold)", name:"Forschung &amp; Lehre", who:"Prof. Richard Jung", role:"Professor für Kommunikationsdesign", text:"Verbindung von Hochschulen, Nachwuchs und Praxis."},
+  {icon:"🏙️", accent:"var(--c-purple)", name:"Spatial Experience", who:"Prof. Roland Lambrette", role:"Gründer, Atelier Markgraph", text:"Kommunikation im Raum — von Messeauftritt bis Museum."},
+  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:"Sascha Hanke", role:"CCO &amp; Co-Owner, häppy", text:"Klassische und moderne Werbekommunikation über alle Kanäle."}
 ];
 document.getElementById('grid-fachbereiche').innerHTML = fachbereiche.map(f=>`
   <div class="card" style="--accent:${f.accent}">
