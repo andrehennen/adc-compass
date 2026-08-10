@@ -146,6 +146,8 @@
     border-top:1px solid var(--line-soft);
   }
   .card .contact-line .who{color:var(--fg);font-weight:500;}
+  .card .contact-line .who a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--dim);}
+  .card .contact-line .who a:hover{border-bottom-color:var(--fg);}
   .card .contact-line .what{color:var(--dim);}
   .tag-transition{
     display:inline-block;margin-top:14px;font-size:11.5px;
@@ -300,8 +302,8 @@
           <div class="icon-wrap">📣</div>
           <h3>PR &amp; Marketing</h3>
           <div class="role">Ansprechpartnerinnen</div>
-          <div class="contact-line"><span class="who">Susann Ruscher</span><span class="what">— Senior Projektmanagerin PR &amp; Marketing</span></div>
-          <div class="contact-line"><span class="who">Marion Fichtelmann</span><span class="what">— Publikationen &amp; Bestellungen (z.&nbsp;B. Pitch Survival Guide)</span></div>
+          <div class="contact-line"><span class="who"><a href="mailto:susann.ruscher@adc.de">Susann Ruscher</a></span><span class="what">— Senior Projektmanagerin PR &amp; Marketing</span></div>
+          <div class="contact-line"><span class="who"><a href="mailto:marion.fichtelmann@adc.de">Marion Fichtelmann</a></span><span class="what">— Publikationen &amp; Bestellungen (z.&nbsp;B. Pitch Survival Guide)</span></div>
           <p style="margin-top:18px;">Präsidiumssprecher aktuell: <strong>Burkhard Müller</strong> (CDO, Mutabor) · Vize-Präsidiumssprecherin: <strong>Dörte Spengler-Ahrens</strong> (Jung von Matt Group, Sektion Hamburg)</p>
         </div>
         <div class="card" style="--accent:var(--c-sky)">
@@ -309,8 +311,7 @@
           <h3>Sponsoring</h3>
           <div class="role">Für Unternehmen</div>
           <p>Der ADC ist ein nicht-gewinnorientierter Verein — alles, was der Club macht, passiert auch dank Sponsor:innen. Firmen werden Partner z.&nbsp;B. beim ADC Festival, der Design oder Digital Conference und erhalten Zugang zu Talenten, Reichweite und dem kreativen Netzwerk.</p>
-          <div class="contact-line"><span class="who">Valentin Götz</span><span class="what">— Ansprechpartner Partnerschaften</span></div>
-          <a class="cta" href="mailto:valentin.goetz@adc.de">valentin.goetz@adc.de</a>
+          <div class="contact-line"><span class="who"><a href="mailto:valentin.goetz@adc.de">Valentin Götz</a></span><span class="what">— Ansprechpartner Partnerschaften</span></div>
         </div>
         <div class="card" style="--accent:var(--c-gold)">
           <div class="icon-wrap">💛</div>
@@ -340,24 +341,24 @@
 const sektionen = {
   hamburg: {
     name:"Hamburg", role:"Sektion", accent:"var(--c-coral)", emoji:"⚓️", people:[
-      {who:"Dörte Spengler-Ahrens", what:"Chairwoman (Non-Executive), Jung von Matt Group — aktuell im Präsidium für Hamburg, zugleich ADC Vize-Präsidentin"},
-      {who:"André Hennen", what:"Vorstand ab Oktober 2026 (nach der JHV) · CCO, Curious Company"}
+      {who:'<a href="mailto:doerte.spenglerahrens@adc.de">Dörte Spengler-Ahrens</a>', what:"Chairwoman (Non-Executive), Jung von Matt Group — aktuell im Präsidium für Hamburg, zugleich ADC Vize-Präsidentin"},
+      {who:'<a href="mailto:andre.hennen@adc.de">André Hennen</a>', what:"Vorstand ab Oktober 2026 (nach der JHV) · CCO, Curious Company"}
     ],
     text:"Die größte ADC-Sektion und Standort des jährlichen ADC Festivals. Regelmäßige Clubtreffen, eigene Ideen-Pipeline und eine wachsende Merch- &amp; Community-Initiative.",
     transition:"Übergabe läuft — offiziell ab JHV Okt. 2026",
     links:[{label:"Ideen-Dashboard Hamburg", url:"https://adc-hh-dashboard.vercel.app"}]
   },
-  berlin: {name:"Berlin", role:"Sektion", accent:"var(--c-indigo)", emoji:"🐻", people:[{who:"Sandra Schilling", what:"Executive Creative Director, We Are Social Deutschland"}],
+  berlin: {name:"Berlin", role:"Sektion", accent:"var(--c-indigo)", emoji:"🐻", people:[{who:'<a href="mailto:sandra.schilling@adc.de">Sandra Schilling</a>', what:"Executive Creative Director, We Are Social Deutschland"}],
     text:"Sitz des ADC Büros und der Geschäftsstelle — hier laufen viele bundesweite Fäden zusammen."},
-  duesseldorf: {name:"Düsseldorf", role:"Sektion", accent:"var(--c-teal)", emoji:"🎨", people:[{who:"Andreas Schimmelpfennig", what:"Creative Director &amp; Geschäftsführer, Elastique GmbH"}],
+  duesseldorf: {name:"Düsseldorf", role:"Sektion", accent:"var(--c-teal)", emoji:"🎨", people:[{who:'<a href="mailto:andreas.schimmelpfennig@adc.de">Andreas Schimmelpfennig</a>', what:"Creative Director &amp; Geschäftsführer, Elastique GmbH"}],
     text:"Traditionsreicher Gründungsort des ADC Deutschland (1964) mit starker Design- und Digital-Szene."},
-  dresden: {name:"Dresden", role:"Sektion", accent:"var(--c-pink)", emoji:"🌉", people:[{who:"Andreas Schanzenbach", what:"Innovation Director, CROMATICS"}],
+  dresden: {name:"Dresden", role:"Sektion", accent:"var(--c-pink)", emoji:"🌉", people:[{who:'<a href="mailto:andreas.schanzenbach@adc.de">Andreas Schanzenbach</a>', what:"Innovation Director, CROMATICS"}],
     text:"Jüngste der sieben Sektionen — wachsende Ost-Präsenz des Clubs."},
-  frankfurt: {name:"Frankfurt am Main", role:"Sektion", accent:"var(--c-gold)", emoji:"🏦", people:[{who:"Claus Fischer", what:"Geschäftsführer, VOSS + FISCHER"}],
+  frankfurt: {name:"Frankfurt am Main", role:"Sektion", accent:"var(--c-gold)", emoji:"🏦", people:[{who:'<a href="mailto:claus.fischer@adc.de">Claus Fischer</a>', what:"Geschäftsführer, VOSS + FISCHER"}],
     text:"Ehemaliger Festival-Standort (2010–2012), heute aktive Sektion mit eigenem Creative Club."},
-  stuttgart: {name:"Stuttgart", role:"Sektion", accent:"var(--c-purple)", emoji:"🚗", people:[{who:"Patrick Amor", what:"CD &amp; Standortleiter, C3 Creative Code and Content"}],
+  stuttgart: {name:"Stuttgart", role:"Sektion", accent:"var(--c-purple)", emoji:"🚗", people:[{who:'<a href="mailto:patrick.amor@adc.de">Patrick Amor</a>', what:"CD &amp; Standortleiter, C3 Creative Code and Content"}],
     text:"Ausrichter der ADC Design Conference im Haus der Wirtschaft."},
-  muenchen: {name:"München", role:"Sektion", accent:"var(--c-sky)", emoji:"🍺", people:[{who:"Matthias Harbeck", what:"Partner &amp; CCO, Saint Elmo's"}],
+  muenchen: {name:"München", role:"Sektion", accent:"var(--c-sky)", emoji:"🍺", people:[{who:'<a href="mailto:matthias.harbeck@adc.de">Matthias Harbeck</a>', what:"Partner &amp; CCO, Saint Elmo's"}],
     text:"Eine der mitgliederstärksten Sektionen im Süden."}
 };
 
@@ -388,13 +389,13 @@ document.querySelectorAll('.pin').forEach(p=>p.addEventListener('click',()=>{
 }));
 
 const fachbereiche = [
-  {icon:"🎨", accent:"var(--c-teal)", name:"Design", who:"Elisabeth Plass", role:"Inhaberin &amp; CD, EIGA Design", text:"Corporate Design, Branding und visuelle Identität."},
-  {icon:"💻", accent:"var(--c-sky)", name:"Digitale Medien", who:"Burkhard Müller", role:"CDO, Mutabor — Präsidiumssprecher", text:"Digitale Produkte, Interfaces und Kampagnen."},
-  {icon:"📰", accent:"var(--c-pink)", name:"Editorial", who:"Sonja Pham", role:"Stellv. Chefredakteurin, Grafikmagazin", text:"Wort- und Bildwelten in Zeitschriften, Verlagen und Publishing."},
-  {icon:"🎬", accent:"var(--c-indigo)", name:"Film &amp; Ton", who:"Jan Fincke", role:"Managing Director &amp; Partner, CZAR Film", text:"Bewegtbild, Sound und alles, was läuft und klingt."},
-  {icon:"🎓", accent:"var(--c-gold)", name:"Forschung &amp; Lehre", who:"Prof. Richard Jung", role:"Professor für Kommunikationsdesign", text:"Verbindung von Hochschulen, Nachwuchs und Praxis."},
-  {icon:"🏙️", accent:"var(--c-purple)", name:"Spatial Experience", who:"Prof. Roland Lambrette", role:"Gründer, Atelier Markgraph", text:"Kommunikation im Raum — von Messeauftritt bis Museum."},
-  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:"Sascha Hanke", role:"CCO &amp; Co-Owner, häppy", text:"Klassische und moderne Werbekommunikation über alle Kanäle."}
+  {icon:"🎨", accent:"var(--c-teal)", name:"Design", who:'<a href="mailto:elisabeth.plass@adc.de">Elisabeth Plass</a>', role:"Inhaberin &amp; CD, EIGA Design", text:"Corporate Design, Branding und visuelle Identität."},
+  {icon:"💻", accent:"var(--c-sky)", name:"Digitale Medien", who:'<a href="mailto:burkhard.mueller@adc.de">Burkhard Müller</a>', role:"CDO, Mutabor — Präsidiumssprecher", text:"Digitale Produkte, Interfaces und Kampagnen."},
+  {icon:"📰", accent:"var(--c-pink)", name:"Editorial", who:'<a href="mailto:sonja.pham@adc.de">Sonja Pham</a>', role:"Stellv. Chefredakteurin, Grafikmagazin", text:"Wort- und Bildwelten in Zeitschriften, Verlagen und Publishing."},
+  {icon:"🎬", accent:"var(--c-indigo)", name:"Film &amp; Ton", who:'<a href="mailto:jan.fincke@adc.de">Jan Fincke</a>', role:"Managing Director &amp; Partner, CZAR Film", text:"Bewegtbild, Sound und alles, was läuft und klingt."},
+  {icon:"🎓", accent:"var(--c-gold)", name:"Forschung &amp; Lehre", who:'<a href="mailto:richard.jung@adc.de">Prof. Richard Jung</a>', role:"Professor für Kommunikationsdesign", text:"Verbindung von Hochschulen, Nachwuchs und Praxis."},
+  {icon:"🏙️", accent:"var(--c-purple)", name:"Spatial Experience", who:'<a href="mailto:roland.lambrette@adc.de">Prof. Roland Lambrette</a>', role:"Gründer, Atelier Markgraph", text:"Kommunikation im Raum — von Messeauftritt bis Museum."},
+  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:'<a href="mailto:sascha.hanke@adc.de">Sascha Hanke</a>', role:"CCO &amp; Co-Owner, häppy", text:"Klassische und moderne Werbekommunikation über alle Kanäle."}
 ];
 document.getElementById('grid-fachbereiche').innerHTML = fachbereiche.map(f=>`
   <div class="card" style="--accent:${f.accent}">
@@ -405,12 +406,12 @@ document.getElementById('grid-fachbereiche').innerHTML = fachbereiche.map(f=>`
   </div>`).join("");
 
 const initiativen = [
-  {icon:"🧭", accent:"var(--c-coral)", name:"Ideen-Dashboard Hamburg", role:"Mitmachen · offen für alle", text:"~24 laufende Ideen und Tickets der Sektion Hamburg — von Merch bis Fördermitgliedschaft. Der schnellste Weg, direkt mitzuarbeiten.", who:"André Hennen", link:{label:"Dashboard öffnen", url:"https://adc-hh-dashboard.vercel.app"}},
-  {icon:"🎓", accent:"var(--c-gold)", name:"ADC Talents", role:"Netzwerk für Nachwuchs", text:"Gewinner:innen des ADC Talent Award nutzen 5 Jahre kostenlos das gesamte ADC-Netzwerk.", who:"Sarah Köster (Sprecherin) · Etienne Wagner (Vize)"},
+  {icon:"🧭", accent:"var(--c-coral)", name:"Ideen-Dashboard Hamburg", role:"Mitmachen · offen für alle", text:"~24 laufende Ideen und Tickets der Sektion Hamburg — von Merch bis Fördermitgliedschaft. Der schnellste Weg, direkt mitzuarbeiten.", who:'<a href="mailto:andre.hennen@adc.de">André Hennen</a>', link:{label:"Dashboard öffnen", url:"https://adc-hh-dashboard.vercel.app"}},
+  {icon:"🎓", accent:"var(--c-gold)", name:"ADC Talents", role:"Netzwerk für Nachwuchs", text:"Gewinner:innen des ADC Talent Award nutzen 5 Jahre kostenlos das gesamte ADC-Netzwerk.", who:'<a href="mailto:sarah.koester@adc.de">Sarah Köster</a> (Sprecherin) · <a href="mailto:etienne.wagner@adc.de">Etienne Wagner</a> (Vize)'},
   {icon:"👋", accent:"var(--c-indigo)", name:"ADC Welcome to Creativity", role:"Programm", text:"Einstiegsprogramm für alle, die frisch in die Kreativbranche kommen."},
-  {icon:"🎤", accent:"var(--c-coral)", name:"ADC Creative Club", role:"Netzwerk für Talente", text:"Talente präsentieren ihre Arbeiten und vernetzen sich mit der Branche.", who:"Elly Plass"},
-  {icon:"🎵", accent:"var(--c-sky)", name:"ADC Beats", role:"Plattform", text:"Bringt Artists, Songwriter:innen, Creatives, Agenturen &amp; Brands zusammen.", who:"Henan Wensink · Jan Fincke"},
-  {icon:"👑", accent:"var(--c-pink)", name:"LADC — Ladies' Art Directors Club", role:"Netzwerk", text:"2024 von Dörte Spengler-Ahrens neu gestartet: Vernetzung, Empowerment und Sichtbarkeit für Frauen im Club.", who:"Dörte Spengler-Ahrens"},
+  {icon:"🎤", accent:"var(--c-coral)", name:"ADC Creative Club", role:"Netzwerk für Talente", text:"Talente präsentieren ihre Arbeiten und vernetzen sich mit der Branche.", who:'<a href="mailto:elisabeth.plass@adc.de">Elly Plass</a>'},
+  {icon:"🎵", accent:"var(--c-sky)", name:"ADC Beats", role:"Plattform", text:"Bringt Artists, Songwriter:innen, Creatives, Agenturen &amp; Brands zusammen.", who:'<a href="mailto:henan.wensink@adc.de">Henan Wensink</a> · <a href="mailto:jan.fincke@adc.de">Jan Fincke</a>'},
+  {icon:"👑", accent:"var(--c-pink)", name:"LADC — Ladies' Art Directors Club", role:"Netzwerk", text:"2024 von Dörte Spengler-Ahrens neu gestartet: Vernetzung, Empowerment und Sichtbarkeit für Frauen im Club.", who:'<a href="mailto:doerte.spenglerahrens@adc.de">Dörte Spengler-Ahrens</a>'},
   {icon:"🚀", accent:"var(--c-purple)", name:"ADC Future Females", role:"Programm", text:"Leadership-Programm für Frauen in der Kreativwirtschaft."},
   {icon:"🌍", accent:"var(--c-sky)", name:"ADC Future Diversity", role:"Programm", text:"„Kreativität braucht unterschiedliche Menschen.“ Diversity- und Age-Initiativen des Clubs."},
   {icon:"🤝", accent:"var(--c-teal)", name:"ADC Mentoring", role:"Programm", text:"Kostenloses Mentoring für alle in der Kreativwirtschaft — erfahrene Mitglieder begleiten Berufseinsteiger:innen."},
