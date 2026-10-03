@@ -51,6 +51,9 @@ Karte ist `position:sticky`, Sektions-Karten scrollen daneben; Klick auf Pin →
 - **Typografie:** Inter (variabel 400–800, selbst gehostet in `fonts/`, keine Google Fonts) als freier Ersatz
   für ADC's proprietäre Centra No. 2. Headlines 800 mit negativem Letter-Spacing.
   **Keine kursiven/italic Schriften.**
+- **Bewegung ruhig halten:** Hover/Press nur mit `--spring` (kein Überschwingen), `--bounce` ausschließlich für
+  die Nadeldrehung beim Klick. Beim Hover nie Schriftgewicht oder Größe von Text ändern, Buttons mit Label
+  nicht als Ganzes skalieren (nur den inneren Kreis) — sonst "zuckt" es (Feedback André, 3.10.2026).
 - **Hover-Effekt:** kein Full-Invert (schwarz↔weiß) mehr — führte zu unlesbarem weiß-auf-weiß durch
   CSS-Specificity-Konflikte. Jetzt nur Border/Box-Shadow-Hover.
 - **Kontakte:** Namen sind direkt als `<a href="mailto:...">Name</a>` verlinkt, keine separaten

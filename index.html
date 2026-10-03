@@ -85,7 +85,7 @@
     font-size:14px;font-weight:600;line-height:1.2;text-decoration:none;white-space:nowrap;
     border-radius:999px;padding:8px 15px;border:1.5px solid var(--ink);
     background:var(--ink);color:#fff;cursor:pointer;
-    transition:background .2s ease, color .2s ease, border-color .2s ease, transform .35s var(--bounce);
+    transition:background .2s ease, color .2s ease, border-color .2s ease, transform .3s var(--spring);
   }
   .cta{margin:16px 6px 0 0;white-space:normal;}
   .cta.secondary{background:#fff;color:var(--ink);}
@@ -93,7 +93,7 @@
     .btn:hover, .cta:hover{background:#333;border-color:#333;}
     .cta.secondary:hover{background:var(--soft);border-color:var(--ink);}
   }
-  .btn:active, .cta:active{transform:scale(.96);transition-duration:.2s,.2s,.2s,.08s;}
+  .btn:active, .cta:active{transform:scale(.97);transition-duration:.2s,.2s,.2s,.1s;}
 
   /* HERO */
   .hero{display:grid;grid-template-columns:1fr 1fr;gap:24px 36px;align-items:center;padding-top:30px;padding-bottom:22px;}
@@ -114,36 +114,35 @@
   .rose-svg .ticks{fill:none;stroke:var(--line-strong);stroke-width:5;stroke-dasharray:1 6.54;stroke-dashoffset:.5;}
   .rose-svg .cardinal{stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;}
   .needle, .needle-sway{transform-origin:150px 150px;}
-  .needle{transition:transform .65s var(--bounce);animation:needleIn 1.1s var(--bounce) .25s backwards;}
+  .needle{transition:transform .5s var(--spring);animation:needleIn 1.1s var(--bounce) .25s backwards;}
+  .needle.turn{transition:transform .7s var(--bounce);}
   @keyframes needleIn{from{transform:rotate(-70deg);}}
-  /* leichtes Einpendeln wie bei einer echten Nadel — zeigt, dass sie sich bewegen lässt */
-  .needle-sway{animation:sway 6s ease-in-out 1.6s infinite;}
-  @keyframes sway{
-    0%,62%,100%{transform:rotate(0);}
-    10%{transform:rotate(4deg);}
-    22%{transform:rotate(-3deg);}
-    34%{transform:rotate(1.8deg);}
-    46%{transform:rotate(-.8deg);}
-  }
+  /* ruhiges, durchgehendes Schweben um die Zielrichtung — zeigt, dass die Nadel sich bewegen lässt */
+  .needle-sway{animation:sway 3.6s ease-in-out 1.4s infinite alternate;}
+  @keyframes sway{from{transform:rotate(-2.5deg);}to{transform:rotate(2.5deg);}}
   .needle polygon.n-half{fill:var(--ink);}
   .needle polygon.s-half{fill:var(--line-strong);}
   .needle circle.hub{fill:#fff;stroke:var(--ink);stroke-width:1.5;}
 
+  /* Der Button selbst bleibt starr (stabile Trefferfläche, Label bewegt sich nicht) — nur der Kreis .pt-ic reagiert */
   .rose-pt{
-    position:absolute;background:var(--soft);border:none;cursor:pointer;
+    position:absolute;background:none;border:none;padding:0;cursor:pointer;
     font:inherit;font-size:20px;
     width:44px;height:44px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    transition:background .2s ease, transform .35s var(--bounce);
     -webkit-user-select:none;user-select:none;
+  }
+  .rose-pt .pt-ic{
+    width:100%;height:100%;border-radius:50%;background:var(--soft);
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease, transform .3s var(--spring);
   }
   .rose-pt[data-deg="0"]{left:calc(50% - 22px);top:calc(10.67% - 22px);}
   .rose-pt[data-deg="90"]{left:calc(89.33% - 22px);top:calc(50% - 22px);}
   .rose-pt[data-deg="180"]{left:calc(50% - 22px);top:calc(89.33% - 22px);}
   .rose-pt[data-deg="270"]{left:calc(10.67% - 22px);top:calc(50% - 22px);}
-  @media(hover:hover){.rose-pt:hover{transform:scale(1.12);background:var(--gray-bg);}}
-  .rose-pt:active{transform:scale(.9);transition-duration:.2s,.08s;}
-  .rose-pt.active{background:var(--ink);}
+  @media(hover:hover){.rose-pt:hover .pt-ic{transform:scale(1.08);background:var(--gray-bg);}}
+  .rose-pt:active .pt-ic{transform:scale(.94);transition-duration:.2s,.1s;}
+  .rose-pt.active .pt-ic{background:var(--ink);}
   .rose-pt .sub-label{
     position:absolute;top:100%;left:50%;transform:translateX(-50%);
     font-size:11px;font-weight:700;letter-spacing:.06em;
@@ -179,14 +178,13 @@
   .pin:focus-visible circle.dot{fill:var(--ink);}
   .pin:focus-visible text{fill:var(--ink);font-weight:700;}
   .pin .hit{cursor:pointer;}
-  .pin circle.dot{fill:#fff;stroke:var(--ink);stroke-width:2;transition:fill .2s ease, transform .35s var(--bounce);transform-box:fill-box;transform-origin:center;}
-  .pin:active circle.dot{transform:scale(.8);transition-duration:.2s,.08s;}
+  .pin circle.dot{fill:#fff;stroke:var(--ink);stroke-width:2;transition:fill .2s ease, transform .3s var(--spring);transform-box:fill-box;transform-origin:center;}
   .pin circle.ping{fill:none;stroke:var(--ink);stroke-width:1.5;vector-effect:non-scaling-stroke;opacity:.5;transform-box:fill-box;transform-origin:center;animation:ping 2.4s ease-out infinite;}
   .pin text{fill:var(--ink-2);font-family:inherit;font-size:12px;font-weight:500;transition:fill .2s ease;}
-  @media(hover:hover){.pin:hover circle.dot{fill:var(--ink);}}
+  @media(hover:hover){.pin:hover circle.dot{fill:var(--ink);} .pin:hover text{fill:var(--ink);}}
   .pin.active circle.dot{fill:var(--ink);transform:scale(1.33);}
   .pin.active circle.ping{stroke-width:2;}
-  .pin.active text, .pin:hover text{fill:var(--ink);font-weight:700;}
+  .pin.active text{fill:var(--ink);font-weight:700;}
   .pin.mine circle.dot{fill:var(--ink);}
   .pin.mine text{font-weight:700;fill:var(--ink);}
   .pin:nth-of-type(1) circle.ping{animation-delay:0s;}
@@ -247,10 +245,10 @@
     background:#fff;border:1.5px solid var(--line-strong);color:var(--ink-2);cursor:pointer;
     font:inherit;font-weight:600;font-size:13px;line-height:1.2;
     padding:8px 14px;border-radius:999px;white-space:nowrap;
-    transition:background .2s ease, color .2s ease, border-color .2s ease, transform .35s var(--bounce);
+    transition:background .2s ease, color .2s ease, border-color .2s ease, transform .3s var(--spring);
   }
   @media(hover:hover){.subnav-btn:hover{border-color:var(--ink);color:var(--ink);}}
-  .subnav-btn:active{transform:scale(.95);transition-duration:.2s,.2s,.2s,.08s;}
+  .subnav-btn:active{transform:scale(.97);transition-duration:.2s,.2s,.2s,.1s;}
   .subnav-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
   .subpanel{display:none;animation:fade .4s var(--spring);}
   .subpanel.active{display:block;}
@@ -290,12 +288,12 @@
     background:none;border:none;cursor:pointer;
     width:50px;height:44px;border-radius:999px;font-size:19px;line-height:1;
     display:flex;align-items:center;justify-content:center;
-    transition:background .25s ease, transform .35s var(--bounce);
+    transition:background .25s ease, transform .3s var(--spring);
     -webkit-user-select:none;user-select:none;
   }
   @media(hover:hover){.dock-btn:hover{background:var(--gray-bg);}}
   .dock-btn.active{background:var(--ink);}
-  .dock-btn:active{transform:scale(.86);transition-duration:.25s,.08s;}
+  .dock-btn:active{transform:scale(.92);transition-duration:.25s,.1s;}
   .haptic{position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;}
 
   @media(prefers-reduced-motion:reduce){
@@ -335,10 +333,10 @@
             </g>
           </g>
         </svg>
-        <button class="rose-pt active" aria-pressed="true" data-tab="sektionen" data-deg="0">📍<span class="sub-label">Sektionen</span></button>
-        <button class="rose-pt" aria-pressed="false" data-tab="fachbereiche" data-deg="90">🎨<span class="sub-label">Fachbereiche</span></button>
-        <button class="rose-pt" aria-pressed="false" data-tab="initiativen" data-deg="180">💡<span class="sub-label">Ideen &amp; Initiativen</span></button>
-        <button class="rose-pt" aria-pressed="false" data-tab="ressourcen" data-deg="270">🗂️<span class="sub-label">Büro &amp; Ressourcen</span></button>
+        <button class="rose-pt active" aria-pressed="true" data-tab="sektionen" data-deg="0"><span class="pt-ic">📍</span><span class="sub-label">Sektionen</span></button>
+        <button class="rose-pt" aria-pressed="false" data-tab="fachbereiche" data-deg="90"><span class="pt-ic">🎨</span><span class="sub-label">Fachbereiche</span></button>
+        <button class="rose-pt" aria-pressed="false" data-tab="initiativen" data-deg="180"><span class="pt-ic">💡</span><span class="sub-label">Ideen &amp; Initiativen</span></button>
+        <button class="rose-pt" aria-pressed="false" data-tab="ressourcen" data-deg="270"><span class="pt-ic">🗂️</span><span class="sub-label">Büro &amp; Ressourcen</span></button>
       </div>
     </nav>
   </div>
@@ -599,6 +597,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.5.1", date:"3. Okt. 2026", text:"Ruhigeres Klick- und Hover-Verhalten: Buttons und Karten-Pins federn nicht mehr nach, Labels springen nicht mehr, die Kompassnadel schwebt gleichmäßig."},
   {v:"1.5.0", date:"3. Okt. 2026", text:"Kompass neu gestaltet: reduziertes Zifferblatt, schlankere Nadel, die leicht pendelt und sich beim Überfahren zum Bereich neigt. Bessere Platzierung neben dem Titel."},
   {v:"1.4.1", date:"3. Okt. 2026", text:"Texte zum Dashboard angepasst: Es heißt jetzt „Dein ADC Dashboard“ und deckt den ganzen ADC ab, nicht nur Hamburg."},
   {v:"1.4.0", date:"3. Okt. 2026", text:"Neues Design im Stil von adc.de und ADC Dashboard: weißer Grund, Inter als Schrift, Kopfleiste mit Link zum Dashboard. Sektionen-Icon ist jetzt ein Pin. Versionierung und Changelog eingeführt."},
@@ -641,6 +640,7 @@ function setTab(tab, {scroll=false, updateHash=true} = {}){
   $$('.panel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+tab));
   // Nadel nimmt immer den kürzeren Weg
   needleDeg += needleDiff(btn);
+  needle.classList.add('turn');
   needle.style.transform = `rotate(${needleDeg}deg)`;
   currentTab = tab;
   if(updateHash) writeHash();
@@ -668,9 +668,10 @@ $$('.rose-pt').forEach(btn=>{
   // Maus über einem anderen Bereich: Nadel neigt sich schon mal dorthin
   btn.addEventListener('pointerenter', e=>{
     if(e.pointerType!=='mouse' || btn.dataset.tab===currentTab) return;
+    needle.classList.remove('turn');
     needle.style.transform = `rotate(${needleDeg + Math.max(-16, Math.min(16, needleDiff(btn)))}deg)`;
   });
-  btn.addEventListener('pointerleave', ()=>{ needle.style.transform = `rotate(${needleDeg}deg)`; });
+  btn.addEventListener('pointerleave', e=>{ if(e.pointerType==='mouse') needle.style.transform = `rotate(${needleDeg}deg)`; });
 });
 $$('.dock-btn').forEach(btn=>btn.addEventListener('click',()=>{ haptic(); setTab(btn.dataset.tab, {scroll:true}); }));
 $$('.subnav-btn').forEach(btn=>btn.addEventListener('click',()=>{ haptic(); setSub(btn.dataset.sub); }));
