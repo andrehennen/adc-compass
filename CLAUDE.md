@@ -92,8 +92,8 @@ immer transparent machen, ob die Adresse bestätigt oder nur abgeleitet ist. **N
 
 ## Offene Punkte
 
-- Präsidiumssprecher:in + Vize nach der JHV 2026 unbekannt – Zeile in der Büro-Karte wurde entfernt, bei Bedarf neu ergänzen.
-- Neue Präsidiumsmitglieder (Sina Otto, Nina Wiemer, Till Diestel, Julius Winter): E-Mails nur musterbasiert, Rollen/Firmen fehlen noch.
+- Präsidiumssprecher:in + Vize werden nach der JHV 2026 noch gewählt – danach Zeile in der Büro-Karte wieder ergänzen.
+- Neue Präsidiumsmitglieder (Sina Otto, Nina Wiemer, Till Diestel, Julius Winter): E-Mails nur musterbasiert. Rollen per Web-Recherche (Okt. 2026) ergänzt und von André bestätigt.
 - Dörte Spengler-Ahrens nur noch bei LADC; ihre Adresse `doerte.spenglerahrens@adc.de` (weicht vom Muster ab) ist ungeprüft.
 - Stimmübertragung/Vollmacht-Formular: noch Platzhalter, Vorlage folgt
 - Mitgliedschafts-PDFs: Stand 2020, Namen teils veraltet – Update angekündigt

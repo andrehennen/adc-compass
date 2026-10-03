@@ -499,12 +499,12 @@ const sektionen = {
 const fachbereiche = [
   {icon:"🎨", accent:"var(--c-teal)", name:"Design", who:'<a href="mailto:elisabeth.plass@adc.de">Elisabeth Plass</a>', role:"Inhaberin &amp; CD, EIGA Design", text:"Corporate Design, Branding und visuelle Identität."},
   {icon:"💻", accent:"var(--c-sky)", name:"Digital", who:'<a href="mailto:burkhard.mueller@adc.de">Burkhard Müller</a>', role:"CDO, Mutabor", text:"Digitale Produkte, Interfaces und Kampagnen."},
-  {icon:"📰", accent:"var(--c-pink)", name:"Editorial", who:'<a href="mailto:sina.otto@adc.de">Sina Otto</a>', text:"Wort- und Bildwelten in Zeitschriften, Verlagen und Publishing."},
+  {icon:"📰", accent:"var(--c-pink)", name:"Editorial", who:'<a href="mailto:sina.otto@adc.de">Sina Otto</a>', role:"Art Director &amp; Type Designerin, selbstständig", text:"Wort- und Bildwelten in Zeitschriften, Verlagen und Publishing."},
   {icon:"🎬", accent:"var(--c-indigo)", name:"Film &amp; Audio", who:'<a href="mailto:jan.fincke@adc.de">Jan Fincke</a>', role:"Managing Director &amp; Partner, CZAR Film", text:"Bewegtbild, Sound und alles, was läuft und klingt."},
   {icon:"🎓", accent:"var(--c-gold)", name:"Forschung &amp; Lehre", who:'<a href="mailto:richard.jung@adc.de">Prof. Richard Jung</a>', role:"Professor für Kommunikationsdesign", text:"Verbindung von Hochschulen, Nachwuchs und Praxis."},
-  {icon:"📱", accent:"var(--c-lime)", name:"Social Media", who:'<a href="mailto:julius.winter@adc.de">Julius Winter</a>', text:"Kreation für Social-Plattformen, Content und Community.", tag:"Neu seit der JHV 2026"},
-  {icon:"🏙️", accent:"var(--c-purple)", name:"Spatial Experience", who:'<a href="mailto:nina.wiemer@adc.de">Nina Wiemer</a>', text:"Kommunikation im Raum – von Messeauftritt bis Museum."},
-  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:'<a href="mailto:till.diestel@adc.de">Till Diestel</a>', text:"Klassische und moderne Werbekommunikation über alle Kanäle."}
+  {icon:"📱", accent:"var(--c-lime)", name:"Social Media", who:'<a href="mailto:julius.winter@adc.de">Julius Winter</a>', role:"Executive Creative Consultant, TikTok DACH", text:"Kreation für Social-Plattformen, Content und Community.", tag:"Neu seit der JHV 2026"},
+  {icon:"🏙️", accent:"var(--c-purple)", name:"Spatial Experience", who:'<a href="mailto:nina.wiemer@adc.de">Nina Wiemer</a>', role:"Head of Live Communication Central Europe, BSH Hausgeräte", text:"Kommunikation im Raum – von Messeauftritt bis Museum."},
+  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:'<a href="mailto:till.diestel@adc.de">Till Diestel</a>', role:"CCO Germany, Serviceplan", text:"Klassische und moderne Werbekommunikation über alle Kanäle."}
 ];
 const initiativen = [
   {icon:"💡", accent:"var(--c-coral)", name:"Dein ADC Dashboard", role:"Mitmachen · offen für alle", text:"Alle Ideen und Initiativen im ADC auf einen Blick – aus den Sektionen und dem Gesamtverein: was läuft, wer sich kümmert, was als Nächstes passiert. Schnapp dir eine offene Idee, stimm ab oder bring eine eigene ein.", who:'<a href="mailto:andre.hennen@adc.de">André Hennen</a>', link:{label:"Dashboard öffnen", url:"https://adc-germany-dashboard.vercel.app/"}},
@@ -595,6 +595,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.6.1", date:"3. Okt. 2026", text:"Rollen der neuen Präsidiumsmitglieder in Editorial, Social Media, Spatial Experience und Werbung ergänzt."},
   {v:"1.6.0", date:"3. Okt. 2026", text:"Neu gewähltes Präsidium nach der JHV 2026: Sektionen Leipzig (statt Dresden) und Köln/Düsseldorf, neue Vorstände in Frankfurt, Editorial, Spatial Experience und Werbung, neuer Fachbereich Social Media. Fachbereiche umbenannt in Digital und Film &amp; Audio. Übergabe-Hinweis bei Hamburg entfernt."},
   {v:"1.5.2", date:"3. Okt. 2026", text:"Typografie: überall der kurze Gedankenstrich (–) statt des langen."},
   {v:"1.5.1", date:"3. Okt. 2026", text:"Ruhigeres Klick- und Hover-Verhalten: Buttons und Karten-Pins federn nicht mehr nach, Labels springen nicht mehr, die Kompassnadel schwebt gleichmäßig."},
