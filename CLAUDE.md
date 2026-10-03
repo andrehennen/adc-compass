@@ -22,6 +22,9 @@ Assets liegen direkt im Repo:
 Kompass-Rose mit 4 Himmelsrichtungen (bewusst reduziert von 6 auf 4 — mehr wirkte überladen):
 Sektionen 📍 · Fachbereiche 🎨 · Ideen & Initiativen 💡 · Büro & Ressourcen 🗂️
 Darunter erscheint beim Scrollen ein Dock mit denselben 4 Bereichen.
+Aufbau der Rose (seit v1.5.0): Zifferblatt aus feinen Strichen in der Mitte, die 4 Bereiche als runde Buttons
+außen herum (Positionen per CSS über `data-deg`). Die Nadel pendelt leicht (`.needle-sway`) und neigt sich bei
+Maus-Hover zum Bereich — Hinweis, dass sie bedienbar ist.
 Die Rose selbst ist **monochrom** (kein Farbcode pro Richtung) — Farbe lebt nur in Emojis/Akzenten.
 
 ### Datenmodelle (alle als JS-Objekte/Arrays im `<script>`)
