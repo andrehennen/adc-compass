@@ -36,10 +36,15 @@ Die Rose selbst ist **monochrom** (kein Farbcode pro Richtung) – Farbe lebt nu
 - `formulare` – Mitgliedsantrag/Bewerbung, Stimmübertragung/Vollmacht (Platzhalter, "Vorlage folgt"), Anträge an den Vorstand (direkt an mitglieder@adc.de, Format: "Ich beantrage, dass …")
 
 ### Germany-Karte
-Echte Geografie aus `isellsoap/deutschlandGeoJSON` (GitHub, `1_deutschland/4_niedrig.geo.json`),
-per Python zu einem SVG-Path konvertiert (äquirektangulare Projektion, korrigiert mit `cos(mean_lat)`,
-~160 Punkte subsampled). 7 Pins mit Puls-Animation (`.ping`), gestaffelt per `nth-of-type` Delay.
-Karte ist `position:sticky`, Sektions-Karten scrollen daneben; Klick auf Pin → `scrollIntoView` zur Stadtkarte.
+Echte Geografie aus `isellsoap/deutschlandGeoJSON` (GitHub, `1_deutschland/3_mittel.geo.json`), per Python zu
+einem SVG-Path konvertiert: Douglas-Peucker mit 1 px Toleranz (~680 Punkte), Festland plus Inseln ab 10 px² Fläche,
+relative Pfad-Koordinaten. viewBox ist auf die Landfläche zugeschnitten (`14 29 372 502`).
+**Projektion (für neue Pins):** `x = 182 + (lon - 9.99) * 39.24`, `y = 130 + (53.55 - lat) * 62.81`
+(äquirektangular, Hamburg als Ankerpunkt). Der Pin Köln/Düsseldorf sitzt bewusst zwischen beiden Städten.
+7 Pins mit ruhiger Puls-Animation (`.ping`), gestaffelt per `nth-of-type` Delay. Städtenamen haben einen Halo
+(`paint-order:stroke`), damit sie über der Grenzlinie lesbar bleiben.
+Karte ist `position:sticky`, Sektions-Karten scrollen daneben; Klick auf Pin → `scrollIntoView` zur Stadtkarte,
+beim Scrollen markiert die Stadtkarte in der Bildmitte ihren Pin.
 
 ## Design-Entscheidungen (bitte respektieren)
 
