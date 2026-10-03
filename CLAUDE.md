@@ -28,8 +28,9 @@ Maus-Hover zum Bereich – Hinweis, dass sie bedienbar ist.
 Die Rose selbst ist **monochrom** (kein Farbcode pro Richtung) – Farbe lebt nur in Emojis/Akzenten.
 
 ### Datenmodelle (alle als JS-Objekte/Arrays im `<script>`)
-- `sektionen` – 7 Städte (hamburg, berlin, duesseldorf, dresden, frankfurt, stuttgart, muenchen), je mit `name, role, accent, emoji, people:[{who,what}], text`. Hamburg hat zusätzlich `transition` (Übergabe-Hinweis) und einen Link zum ADC Dashboard.
-- `fachbereiche` – 7 Disziplinen, **alphabetisch sortiert**: Design, Digitale Medien, Editorial, Film & Ton, Forschung & Lehre, Spatial Experience, Werbung
+- `sektionen` – 7 Städte (hamburg, berlin, duesseldorf → „Köln/Düsseldorf“, leipzig, frankfurt, stuttgart, muenchen), je mit `name, role, accent, emoji, people:[{who,what}], text`. Optional `transition` (Hinweis-Tag, aktuell nirgends genutzt). Hamburg hat einen Link zum ADC Dashboard.
+- `fachbereiche` – 8 Disziplinen, **alphabetisch sortiert**: Design, Digital, Editorial, Film & Audio, Forschung & Lehre, Social Media (neu seit JHV 2026), Spatial Experience, Werbung. Optional `tag`.
+- Präsidium = Stand nach JHV Okt. 2026 (7 Sektionen + 8 Fachbereiche + kooptiert: Sarah Köster für ADC Talents)
 - `initiativen` – Dein ADC Dashboard, ADC Talents, Welcome to Creativity, Creative Club, ADC Beats, LADC, Future Females, Future Diversity, Mentoring, Speed-Recruiting, Fördermitglieder
 - `ci` – 5 Karten aus dem echten 2018-Manual: Typografie, Farben (mit echten Swatches), Logo & Bildmarke, Bildsprache, Vorlagen & Formate – plus feste Karte "Offizielles CI-Manual" (PDF-Link)
 - `formulare` – Mitgliedsantrag/Bewerbung, Stimmübertragung/Vollmacht (Platzhalter, "Vorlage folgt"), Anträge an den Vorstand (direkt an mitglieder@adc.de, Format: "Ich beantrage, dass …")
@@ -91,9 +92,9 @@ immer transparent machen, ob die Adresse bestätigt oder nur abgeleitet ist. **N
 
 ## Offene Punkte
 
-- Nach der JHV (Okt. 2026): Übergabe-Part bei Hamburg entfernen (Dörte Spengler-Ahrens als aktuelle
-  Präsidiumsvertreterin, `transition`-Hinweis, "Vorstand ab Oktober 2026") – bis dahin bewusst unverändert.
-  Ihre Adresse `doerte.spenglerahrens@adc.de` (weicht vom Muster ab) ist ungeprüft und vorerst zurückgestellt.
+- Präsidiumssprecher:in + Vize nach der JHV 2026 unbekannt – Zeile in der Büro-Karte wurde entfernt, bei Bedarf neu ergänzen.
+- Neue Präsidiumsmitglieder (Sina Otto, Nina Wiemer, Till Diestel, Julius Winter): E-Mails nur musterbasiert, Rollen/Firmen fehlen noch.
+- Dörte Spengler-Ahrens nur noch bei LADC; ihre Adresse `doerte.spenglerahrens@adc.de` (weicht vom Muster ab) ist ungeprüft.
 - Stimmübertragung/Vollmacht-Formular: noch Platzhalter, Vorlage folgt
 - Mitgliedschafts-PDFs: Stand 2020, Namen teils veraltet – Update angekündigt
 - Private vs. Public Repo: noch offene Entscheidung (gilt auch für Schwester-Projekt `adc`)

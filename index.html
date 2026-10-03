@@ -357,13 +357,13 @@
             <rect class="hit" x="-95" y="-20" width="115" height="40" fill="transparent"/>
             <circle class="ping" r="7" aria-hidden="true"/><circle class="dot" r="6"/><text x="-68" y="4">Berlin</text>
           </g>
-          <g class="pin" data-city="duesseldorf" role="button" tabindex="0" aria-label="Sektion Düsseldorf anzeigen" transform="translate(55,276)">
-            <rect class="hit" x="-24" y="-20" width="115" height="40" fill="transparent"/>
-            <circle class="ping" r="7" aria-hidden="true"/><circle class="dot" r="6"/><text x="12" y="4">Düsseldorf</text>
+          <g class="pin" data-city="duesseldorf" role="button" tabindex="0" aria-label="Sektion Köln/Düsseldorf anzeigen" transform="translate(55,276)">
+            <rect class="hit" x="-24" y="-20" width="140" height="40" fill="transparent"/>
+            <circle class="ping" r="7" aria-hidden="true"/><circle class="dot" r="6"/><text x="12" y="4">Köln/Düsseldorf</text>
           </g>
-          <g class="pin" data-city="dresden" role="button" tabindex="0" aria-label="Sektion Dresden anzeigen" transform="translate(329,287)">
-            <rect class="hit" x="-95" y="-20" width="115" height="40" fill="transparent"/>
-            <circle class="ping" r="7" aria-hidden="true"/><circle class="dot" r="6"/><text x="-75" y="4">Dresden</text>
+          <g class="pin" data-city="leipzig" role="button" tabindex="0" aria-label="Sektion Leipzig anzeigen" transform="translate(276,269)">
+            <rect class="hit" x="-24" y="-20" width="115" height="40" fill="transparent"/>
+            <circle class="ping" r="7" aria-hidden="true"/><circle class="dot" r="6"/><text x="12" y="4">Leipzig</text>
           </g>
           <g class="pin" data-city="frankfurt" role="button" tabindex="0" aria-label="Sektion Frankfurt am Main anzeigen" transform="translate(131,346)">
             <rect class="hit" x="-24" y="-20" width="115" height="40" fill="transparent"/>
@@ -386,7 +386,7 @@
   <!-- FACHBEREICHE -->
   <section class="panel" id="panel-fachbereiche">
     <h2 class="panel-title">Fachbereiche</h2>
-    <p class="intro-line">7 Fachbereiche bündeln die Disziplinen – quer über alle Städte hinweg.</p>
+    <p class="intro-line">8 Fachbereiche bündeln die Disziplinen – quer über alle Städte hinweg.</p>
     <div class="grid" id="grid-fachbereiche"></div>
   </section>
 
@@ -413,7 +413,7 @@
           <div class="icon-wrap">🏛️</div>
           <h3>ADC Büro Berlin</h3>
           <div class="role">Geschäftsstelle</div>
-          <p>Rund 15 Angestellte organisieren Veranstaltungen, Publikationen, Seminare, Mentoring, PR, Marketing, Mitgliederbetreuung und Finanzen. Ein geschäftsführender Vorstand hält den Laden operativ zusammen; das 14-köpfige, ehrenamtliche Präsidium (die Sektions- und Fachbereichsvorstände) trifft die inhaltlichen Entscheidungen.</p>
+          <p>Rund 15 Angestellte organisieren Veranstaltungen, Publikationen, Seminare, Mentoring, PR, Marketing, Mitgliederbetreuung und Finanzen. Ein geschäftsführender Vorstand hält den Laden operativ zusammen; das ehrenamtliche Präsidium (7 Sektions- und 8 Fachbereichsvorstände, dazu kooptierte Mitglieder) trifft die inhaltlichen Entscheidungen.</p>
           <address>Art Directors Club für Deutschland e. V.<br>Salzufer 15–16, Kontorhaus<br>10587 Berlin</address>
           <a class="cta" href="mailto:adc@adc.de">adc@adc.de</a>
           <a class="cta secondary" href="https://www.adc.de/kontakt/" target="_blank" rel="noopener">Kontaktformular</a>
@@ -424,7 +424,6 @@
           <div class="role">Ansprechpartnerinnen</div>
           <div class="contact-line"><span class="who"><a href="mailto:susann.ruscher@adc.de">Susann Ruscher</a></span><span class="what">– Senior Projektmanagerin PR &amp; Marketing</span></div>
           <div class="contact-line"><span class="who"><a href="mailto:marion.fichtelmann@adc.de">Marion Fichtelmann</a></span><span class="what">– Publikationen &amp; Bestellungen (z.&nbsp;B. Pitch Survival Guide)</span></div>
-          <p style="margin-top:18px;">Präsidiumssprecher aktuell: <strong>Burkhard Müller</strong> (CDO, Mutabor) · Vize-Präsidiumssprecherin: <strong>Dörte Spengler-Ahrens</strong> (Jung von Matt Group, Sektion Hamburg)</p>
         </div>
         <div class="card" style="--accent:var(--c-sky)">
           <div class="icon-wrap">🤝</div>
@@ -478,20 +477,18 @@
 const sektionen = {
   hamburg: {
     name:"Hamburg", role:"Sektion", accent:"var(--c-coral)", emoji:"⚓️", people:[
-      {who:'<a href="mailto:doerte.spenglerahrens@adc.de">Dörte Spengler-Ahrens</a>', what:"Chairwoman (Non-Executive), Jung von Matt Group – aktuell im Präsidium für Hamburg, zugleich ADC Vize-Präsidentin"},
-      {who:'<a href="mailto:andre.hennen@adc.de">André Hennen</a>', what:"Vorstand ab Oktober 2026 (nach der JHV) · CCO, Curious Company"}
+      {who:'<a href="mailto:andre.hennen@adc.de">André Hennen</a>', what:"CCO, Curious Company"}
     ],
     text:"Die größte ADC-Sektion und Standort des jährlichen ADC Festivals. Regelmäßige Clubtreffen, eigene Ideen-Pipeline und eine wachsende Merch- &amp; Community-Initiative.",
-    transition:"Übergabe läuft – offiziell ab JHV Okt. 2026",
     links:[{label:"ADC Dashboard", url:"https://adc-germany-dashboard.vercel.app/"}]
   },
   berlin: {name:"Berlin", role:"Sektion", accent:"var(--c-indigo)", emoji:"🐻", people:[{who:'<a href="mailto:sandra.schilling@adc.de">Sandra Schilling</a>', what:"Executive Creative Director, We Are Social Deutschland"}],
     text:"Sitz des ADC Büros und der Geschäftsstelle – hier laufen viele bundesweite Fäden zusammen."},
-  duesseldorf: {name:"Düsseldorf", role:"Sektion", accent:"var(--c-teal)", emoji:"🎨", people:[{who:'<a href="mailto:andreas.schimmelpfennig@adc.de">Andreas Schimmelpfennig</a>', what:"Creative Director &amp; Geschäftsführer, Elastique GmbH"}],
+  duesseldorf: {name:"Köln/Düsseldorf", role:"Sektion", accent:"var(--c-teal)", emoji:"🎨", people:[{who:'<a href="mailto:andreas.schimmelpfennig@adc.de">Andreas Schimmelpfennig</a>', what:"Creative Director &amp; Geschäftsführer, Elastique GmbH"}],
     text:"Traditionsreicher Gründungsort des ADC Deutschland (1964) mit starker Design- und Digital-Szene."},
-  dresden: {name:"Dresden", role:"Sektion", accent:"var(--c-pink)", emoji:"🌉", people:[{who:'<a href="mailto:andreas.schanzenbach@adc.de">Andreas Schanzenbach</a>', what:"Innovation Director, CROMATICS"}],
-    text:"Jüngste der sieben Sektionen – wachsende Ost-Präsenz des Clubs."},
-  frankfurt: {name:"Frankfurt am Main", role:"Sektion", accent:"var(--c-gold)", emoji:"🏦", people:[{who:'<a href="mailto:claus.fischer@adc.de">Claus Fischer</a>', what:"Geschäftsführer, VOSS + FISCHER"}],
+  leipzig: {name:"Leipzig", role:"Sektion", accent:"var(--c-pink)", emoji:"🎼", people:[{who:'<a href="mailto:andreas.schanzenbach@adc.de">Andreas Schanzenbach</a>', what:"Innovation Director, CROMATICS"}],
+    text:"Die Sektion im Osten – wachsende Ost-Präsenz des Clubs."},
+  frankfurt: {name:"Frankfurt am Main", role:"Sektion", accent:"var(--c-gold)", emoji:"🏦", people:[{who:'<a href="mailto:roland.lambrette@adc.de">Prof. Roland Lambrette</a>', what:"Gründer, Atelier Markgraph"}],
     text:"Ehemaliger Festival-Standort (2010–2012), heute aktive Sektion mit eigenem Creative Club."},
   stuttgart: {name:"Stuttgart", role:"Sektion", accent:"var(--c-purple)", emoji:"🚗", people:[{who:'<a href="mailto:patrick.amor@adc.de">Patrick Amor</a>', what:"CD &amp; Standortleiter, C3 Creative Code and Content"}],
     text:"Ausrichter der ADC Design Conference im Haus der Wirtschaft."},
@@ -501,16 +498,17 @@ const sektionen = {
 
 const fachbereiche = [
   {icon:"🎨", accent:"var(--c-teal)", name:"Design", who:'<a href="mailto:elisabeth.plass@adc.de">Elisabeth Plass</a>', role:"Inhaberin &amp; CD, EIGA Design", text:"Corporate Design, Branding und visuelle Identität."},
-  {icon:"💻", accent:"var(--c-sky)", name:"Digitale Medien", who:'<a href="mailto:burkhard.mueller@adc.de">Burkhard Müller</a>', role:"CDO, Mutabor – Präsidiumssprecher", text:"Digitale Produkte, Interfaces und Kampagnen."},
-  {icon:"📰", accent:"var(--c-pink)", name:"Editorial", who:'<a href="mailto:sonja.pham@adc.de">Sonja Pham</a>', role:"Stellv. Chefredakteurin, Grafikmagazin", text:"Wort- und Bildwelten in Zeitschriften, Verlagen und Publishing."},
-  {icon:"🎬", accent:"var(--c-indigo)", name:"Film &amp; Ton", who:'<a href="mailto:jan.fincke@adc.de">Jan Fincke</a>', role:"Managing Director &amp; Partner, CZAR Film", text:"Bewegtbild, Sound und alles, was läuft und klingt."},
+  {icon:"💻", accent:"var(--c-sky)", name:"Digital", who:'<a href="mailto:burkhard.mueller@adc.de">Burkhard Müller</a>', role:"CDO, Mutabor", text:"Digitale Produkte, Interfaces und Kampagnen."},
+  {icon:"📰", accent:"var(--c-pink)", name:"Editorial", who:'<a href="mailto:sina.otto@adc.de">Sina Otto</a>', text:"Wort- und Bildwelten in Zeitschriften, Verlagen und Publishing."},
+  {icon:"🎬", accent:"var(--c-indigo)", name:"Film &amp; Audio", who:'<a href="mailto:jan.fincke@adc.de">Jan Fincke</a>', role:"Managing Director &amp; Partner, CZAR Film", text:"Bewegtbild, Sound und alles, was läuft und klingt."},
   {icon:"🎓", accent:"var(--c-gold)", name:"Forschung &amp; Lehre", who:'<a href="mailto:richard.jung@adc.de">Prof. Richard Jung</a>', role:"Professor für Kommunikationsdesign", text:"Verbindung von Hochschulen, Nachwuchs und Praxis."},
-  {icon:"🏙️", accent:"var(--c-purple)", name:"Spatial Experience", who:'<a href="mailto:roland.lambrette@adc.de">Prof. Roland Lambrette</a>', role:"Gründer, Atelier Markgraph", text:"Kommunikation im Raum – von Messeauftritt bis Museum."},
-  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:'<a href="mailto:sascha.hanke@adc.de">Sascha Hanke</a>', role:"CCO &amp; Co-Owner, häppy", text:"Klassische und moderne Werbekommunikation über alle Kanäle."}
+  {icon:"📱", accent:"var(--c-lime)", name:"Social Media", who:'<a href="mailto:julius.winter@adc.de">Julius Winter</a>', text:"Kreation für Social-Plattformen, Content und Community.", tag:"Neu seit der JHV 2026"},
+  {icon:"🏙️", accent:"var(--c-purple)", name:"Spatial Experience", who:'<a href="mailto:nina.wiemer@adc.de">Nina Wiemer</a>', text:"Kommunikation im Raum – von Messeauftritt bis Museum."},
+  {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:'<a href="mailto:till.diestel@adc.de">Till Diestel</a>', text:"Klassische und moderne Werbekommunikation über alle Kanäle."}
 ];
 const initiativen = [
   {icon:"💡", accent:"var(--c-coral)", name:"Dein ADC Dashboard", role:"Mitmachen · offen für alle", text:"Alle Ideen und Initiativen im ADC auf einen Blick – aus den Sektionen und dem Gesamtverein: was läuft, wer sich kümmert, was als Nächstes passiert. Schnapp dir eine offene Idee, stimm ab oder bring eine eigene ein.", who:'<a href="mailto:andre.hennen@adc.de">André Hennen</a>', link:{label:"Dashboard öffnen", url:"https://adc-germany-dashboard.vercel.app/"}},
-  {icon:"🎓", accent:"var(--c-gold)", name:"ADC Talents", role:"Netzwerk für Nachwuchs", text:"Gewinner:innen des ADC Talent Award nutzen 5 Jahre kostenlos das gesamte ADC-Netzwerk.", who:'<a href="mailto:sarah.koester@adc.de">Sarah Köster</a> (Sprecherin) · <a href="mailto:etienne.wagner@adc.de">Etienne Wagner</a> (Vize)'},
+  {icon:"🎓", accent:"var(--c-gold)", name:"ADC Talents", role:"Netzwerk für Nachwuchs", text:"Gewinner:innen des ADC Talent Award nutzen 5 Jahre kostenlos das gesamte ADC-Netzwerk.", who:'<a href="mailto:sarah.koester@adc.de">Sarah Köster</a> (Sprecherin, kooptiert im Präsidium) · <a href="mailto:etienne.wagner@adc.de">Etienne Wagner</a> (Vize)'},
   {icon:"👋", accent:"var(--c-indigo)", name:"ADC Welcome to Creativity", role:"Programm", text:"Einstiegsprogramm für alle, die frisch in die Kreativbranche kommen."},
   {icon:"🎤", accent:"var(--c-coral)", name:"ADC Creative Club", role:"Netzwerk für Talente", text:"Talente präsentieren ihre Arbeiten und vernetzen sich mit der Branche.", who:'<a href="mailto:elisabeth.plass@adc.de">Elly Plass</a>'},
   {icon:"🎵", accent:"var(--c-sky)", name:"ADC Beats", role:"Plattform", text:"Bringt Artists, Songwriter:innen, Creatives, Agenturen &amp; Brands zusammen.", who:'<a href="mailto:henan.wensink@adc.de">Henan Wensink</a> · <a href="mailto:jan.fincke@adc.de">Jan Fincke</a>'},
@@ -578,7 +576,7 @@ render('sektion-list', Object.entries(sektionen).map(([key, s])=>({
   people:s.people, tag:s.transition, links:s.links
 })));
 render('grid-fachbereiche', fachbereiche.map(f=>({
-  icon:f.icon, name:f.name, text:f.text, people:[{who:f.who, what:f.role}]
+  icon:f.icon, name:f.name, text:f.text, people:[{who:f.who, what:f.role}], tag:f.tag
 })));
 render('grid-initiativen', initiativen.map(i=>({
   icon:i.icon, name:i.name, role:i.role, text:i.text,
@@ -597,6 +595,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.6.0", date:"3. Okt. 2026", text:"Neu gewähltes Präsidium nach der JHV 2026: Sektionen Leipzig (statt Dresden) und Köln/Düsseldorf, neue Vorstände in Frankfurt, Editorial, Spatial Experience und Werbung, neuer Fachbereich Social Media. Fachbereiche umbenannt in Digital und Film &amp; Audio. Übergabe-Hinweis bei Hamburg entfernt."},
   {v:"1.5.2", date:"3. Okt. 2026", text:"Typografie: überall der kurze Gedankenstrich (–) statt des langen."},
   {v:"1.5.1", date:"3. Okt. 2026", text:"Ruhigeres Klick- und Hover-Verhalten: Buttons und Karten-Pins federn nicht mehr nach, Labels springen nicht mehr, die Kompassnadel schwebt gleichmäßig."},
   {v:"1.5.0", date:"3. Okt. 2026", text:"Kompass neu gestaltet: reduziertes Zifferblatt, schlankere Nadel, die leicht pendelt und sich beim Überfahren zum Bereich neigt. Bessere Platzierung neben dem Titel."},
