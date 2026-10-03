@@ -13,13 +13,15 @@ Fachbereiche (Disziplinen), Initiativen/Ideen und "Büro & Ressourcen" (Kontakte
 
 Alles in **einer** Datei: `index.html` (Vanilla HTML/CSS/JS, kein Framework, kein Build-Step).
 Assets liegen direkt im Repo:
+- `fonts/` — Inter (woff2, identisch mit dem Dashboard)
 - `ci/` — echte ADC-Logos (PNG) + das ADC Design Manual 2018 (PDF)
 - `formulare/` — Mitgliedschafts-PDFs (Stand 2020, teils veraltete Namen, als Übergangslösung markiert)
 - `favicon*.png/ico`, `apple-touch-icon.png`
 
 ### Navigation
 Kompass-Rose mit 4 Himmelsrichtungen (bewusst reduziert von 6 auf 4 — mehr wirkte überladen):
-Sektionen 🗺️ · Fachbereiche 🎨 · Ideen & Initiativen 💡 · Büro & Ressourcen 🗂️
+Sektionen 📍 · Fachbereiche 🎨 · Ideen & Initiativen 💡 · Büro & Ressourcen 🗂️
+Darunter erscheint beim Scrollen ein Dock mit denselben 4 Bereichen.
 Die Rose selbst ist **monochrom** (kein Farbcode pro Richtung) — Farbe lebt nur in Emojis/Akzenten.
 
 ### Datenmodelle (alle als JS-Objekte/Arrays im `<script>`)
@@ -37,12 +39,14 @@ Karte ist `position:sticky`, Sektions-Karten scrollen daneben; Klick auf Pin →
 
 ## Design-Entscheidungen (bitte respektieren)
 
-- **Farben:** `--bg:#000`, `--fg:#fff`, Akzentpalette: coral `#FF5A3C`, teal `#00A896`, gold `#FFC145`,
-  indigo `#5D5FEF`, pink `#EF476F`, sky `#3AA6FF`, purple `#9B59B6`, lime `#B4D64B`.
-  Grundsatz nach mehreren Korrekturrunden: **sparsam** einsetzen — nur in Emojis, kleinen Akzenten,
-  Buttons. NICHT großflächig auf Karten/Borders/Icons (wurde explizit zurückgebaut, "wird sofort zuviel").
-- **Typografie:** Poppins (500/600/700/800) als freier Ersatz für ADC's proprietäre Centra No. 2
-  (Le Jeune Deck als Akzent-Serife — rechtlich nicht redistributierbar, daher Substitut).
+- **Gleiches Design-System wie das ADC Dashboard** (seit v1.4.0, Okt. 2026 — vorher schwarz mit Poppins),
+  orientiert an adc.de. Tokens 1:1 aus dem Dashboard: `--bg:#fff`, `--soft:#f4f4f2`, `--line:#e2e2df`,
+  `--line-strong:#c9c9c5`, `--ink:#0a0a0a`, `--ink-2:#3d3d3d`, `--ink-3:#6b6b6b`, `--radius:12px`.
+  Pill-Buttons (999px, 1.5px Ink-Border), sticky Kopfleiste mit Blur, Kicker-Labels 12px/700/uppercase.
+- **Farben:** Schwarz/Weiß/Grau. Die Akzentpalette (`--c-coral` etc., `accent` in den Daten) ist definiert,
+  wird aber bewusst nicht großflächig genutzt — Farbe lebt in Emojis ("wird sofort zuviel").
+- **Typografie:** Inter (variabel 400–800, selbst gehostet in `fonts/`, keine Google Fonts) als freier Ersatz
+  für ADC's proprietäre Centra No. 2. Headlines 800 mit negativem Letter-Spacing.
   **Keine kursiven/italic Schriften.**
 - **Hover-Effekt:** kein Full-Invert (schwarz↔weiß) mehr — führte zu unlesbarem weiß-auf-weiß durch
   CSS-Specificity-Konflikte. Jetzt nur Border/Box-Shadow-Hover.
@@ -66,12 +70,20 @@ immer transparent machen, ob die Adresse bestätigt oder nur abgeleitet ist. **N
 - Repo ist **public** — entsprechend sind alle gehosteten PDFs/Kontaktdaten öffentlich sichtbar.
   Falls das geändert werden soll: Privat schalten würde GitHub Pages/Vercel-Freetier-Setup berühren,
   noch nicht final entschieden.
-- Footer-Signatur-Format: "Stand [Monat Jahr] · Zusammengetragen und erstellt von André Hennen,
+- Footer-Signatur-Format: "v[Version] · Stand [Monat Jahr] · Zusammengetragen und erstellt von André Hennen,
   Curious Company · Datenquellen: ADC Büro, adc.de, Mitglieder und Ideen-Dashboard" — bei Content-Updates
   "Stand" ggf. aktualisieren.
+- **Versionierung & Changelog:** SemVer-artig (`MAJOR.MINOR.PATCH`) — MINOR für neue Inhalte/Funktionen, PATCH für
+  Korrekturen. Einzige Quelle ist das Array `changelog` im `<script>` von `index.html` (neuester Eintrag zuerst):
+  Bei jedem Release dort einen Eintrag ergänzen — Versionsnummer im Footer und das aufklappbare Changelog
+  (wie im Dashboard) werden daraus erzeugt.
+- Dashboard-URL: https://adc-germany-dashboard.vercel.app/ (alte `adc-hh-dashboard`-URL leitet nur weiter).
 
 ## Offene Punkte
 
+- Nach der JHV (Okt. 2026): Übergabe-Part bei Hamburg entfernen (Dörte Spengler-Ahrens als aktuelle
+  Präsidiumsvertreterin, `transition`-Hinweis, "Vorstand ab Oktober 2026") — bis dahin bewusst unverändert.
+  Ihre Adresse `doerte.spenglerahrens@adc.de` (weicht vom Muster ab) ist ungeprüft und vorerst zurückgestellt.
 - Stimmübertragung/Vollmacht-Formular: noch Platzhalter, Vorlage folgt
 - Mitgliedschafts-PDFs: Stand 2020, Namen teils veraltet — Update angekündigt
 - Private vs. Public Repo: noch offene Entscheidung (gilt auch für Schwester-Projekt `adc`)
