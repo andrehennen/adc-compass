@@ -7,7 +7,7 @@ Fachbereiche (Disziplinen), Initiativen/Ideen und "Büro & Ressourcen" (Kontakte
 - **Repo:** github.com/andrehennen/adc-compass (public)
 - **Deploy:** Vercel, Auto-Deploy bei Push auf `main`. Keine Build-Schritte nötig.
 - **Owner/Autor:** André Hennen (andre.hennen@adc.de), CCO Curious Company, incoming Sektionsvorstand ADC Hamburg (offiziell ab JHV Okt. 2026)
-- **Schwester-Projekt:** `andrehennen/adc` (lokal: `../adc-dashboard`) → „Dein ADC Dashboard“ (adc-germany-dashboard.vercel.app) – Ideen-/Initiativen-Tracking für den ganzen ADC (Sektionen + Gesamtverein), gleiche Pipeline (GitHub+Vercel), teilt CI-Assets/Favicons
+- **Schwester-Projekt:** `andrehennen/adc` (lokal: `../adc-dashboard`) → „Dein ADC Dashboard“ (adc-germany-dashboard.vercel.app) – Ideen-/Initiativen-Tracking für den ganzen ADC (Sektionen + Gesamtverein), gleiche Pipeline (GitHub+Vercel), gleiche CI-Assets, eigenes App-Icon
 
 ## Struktur
 
@@ -16,7 +16,9 @@ Assets liegen direkt im Repo:
 - `fonts/` – Inter (woff2, identisch mit dem Dashboard)
 - `ci/` – echte ADC-Logos (PNG) + das ADC Design Manual 2018 (PDF)
 - `formulare/` – Mitgliedschafts-PDFs (Stand 2020, teils veraltete Namen, als Übergangslösung markiert)
-- `favicon*.png/ico`, `apple-touch-icon.png`
+- `favicon*.png/ico`, `apple-touch-icon.png`, `manifest.webmanifest` – App-Icon: **schwarzes Logo auf Weiß**, Logo 72 %
+  der Kantenlänge (Dashboard: weißes Logo auf Schwarz – so sind beide auf dem Homescreen unterscheidbar).
+  Bei neuen Icons `?v=` in den Verweisen hochzählen, sonst zeigen Geräte das alte aus dem Cache.
 
 ### Navigation
 Kompass-Rose mit 4 Himmelsrichtungen (bewusst reduziert von 6 auf 4 – mehr wirkte überladen):
