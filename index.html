@@ -448,7 +448,7 @@
       <button class="foot-btn" type="button" id="cl-btn" aria-expanded="false" aria-controls="cl-list">Changelog</button>
     </div>
     <ol class="foot-panel changelog" id="cl-list" hidden></ol>
-    <div class="legal"><span id="version"></span> · Stand Oktober 2026 · Zusammengetragen und erstellt von André Hennen, Curious Company · Datenquellen: ADC Büro, adc.de, Mitglieder und <a href="https://adc-germany-dashboard.vercel.app/" target="_blank" rel="noopener">Ideen-Dashboard</a></div>
+    <div class="legal"><span id="version"></span> · Stand Oktober 2026 · Zusammengetragen und erstellt von André Hennen, Curious Company · Datenquellen: ADC Büro, adc.de, Mitglieder und <a href="https://adc-germany-dashboard.vercel.app/" target="_blank" rel="noopener">ADC Dashboard</a></div>
   </div>
 </footer>
 
@@ -469,7 +469,7 @@ const sektionen = {
     ],
     text:"Die größte ADC-Sektion und Standort des jährlichen ADC Festivals. Regelmäßige Clubtreffen, eigene Ideen-Pipeline und eine wachsende Merch- &amp; Community-Initiative.",
     transition:"Übergabe läuft — offiziell ab JHV Okt. 2026",
-    links:[{label:"Ideen-Dashboard Hamburg", url:"https://adc-germany-dashboard.vercel.app/"}]
+    links:[{label:"ADC Dashboard", url:"https://adc-germany-dashboard.vercel.app/"}]
   },
   berlin: {name:"Berlin", role:"Sektion", accent:"var(--c-indigo)", emoji:"🐻", people:[{who:'<a href="mailto:sandra.schilling@adc.de">Sandra Schilling</a>', what:"Executive Creative Director, We Are Social Deutschland"}],
     text:"Sitz des ADC Büros und der Geschäftsstelle — hier laufen viele bundesweite Fäden zusammen."},
@@ -495,7 +495,7 @@ const fachbereiche = [
   {icon:"📢", accent:"var(--c-coral)", name:"Werbung", who:'<a href="mailto:sascha.hanke@adc.de">Sascha Hanke</a>', role:"CCO &amp; Co-Owner, häppy", text:"Klassische und moderne Werbekommunikation über alle Kanäle."}
 ];
 const initiativen = [
-  {icon:"🧭", accent:"var(--c-coral)", name:"Ideen-Dashboard Hamburg", role:"Mitmachen · offen für alle", text:"~24 laufende Ideen und Tickets der Sektion Hamburg — von Merch bis Fördermitgliedschaft. Der schnellste Weg, direkt mitzuarbeiten.", who:'<a href="mailto:andre.hennen@adc.de">André Hennen</a>', link:{label:"Dashboard öffnen", url:"https://adc-germany-dashboard.vercel.app/"}},
+  {icon:"💡", accent:"var(--c-coral)", name:"Dein ADC Dashboard", role:"Mitmachen · offen für alle", text:"Alle Ideen und Initiativen im ADC auf einen Blick — aus den Sektionen und dem Gesamtverein: was läuft, wer sich kümmert, was als Nächstes passiert. Schnapp dir eine offene Idee, stimm ab oder bring eine eigene ein.", who:'<a href="mailto:andre.hennen@adc.de">André Hennen</a>', link:{label:"Dashboard öffnen", url:"https://adc-germany-dashboard.vercel.app/"}},
   {icon:"🎓", accent:"var(--c-gold)", name:"ADC Talents", role:"Netzwerk für Nachwuchs", text:"Gewinner:innen des ADC Talent Award nutzen 5 Jahre kostenlos das gesamte ADC-Netzwerk.", who:'<a href="mailto:sarah.koester@adc.de">Sarah Köster</a> (Sprecherin) · <a href="mailto:etienne.wagner@adc.de">Etienne Wagner</a> (Vize)'},
   {icon:"👋", accent:"var(--c-indigo)", name:"ADC Welcome to Creativity", role:"Programm", text:"Einstiegsprogramm für alle, die frisch in die Kreativbranche kommen."},
   {icon:"🎤", accent:"var(--c-coral)", name:"ADC Creative Club", role:"Netzwerk für Talente", text:"Talente präsentieren ihre Arbeiten und vernetzen sich mit der Branche.", who:'<a href="mailto:elisabeth.plass@adc.de">Elly Plass</a>'},
@@ -583,6 +583,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.4.1", date:"3. Okt. 2026", text:"Texte zum Dashboard angepasst: Es heißt jetzt „Dein ADC Dashboard“ und deckt den ganzen ADC ab, nicht nur Hamburg."},
   {v:"1.4.0", date:"3. Okt. 2026", text:"Neues Design im Stil von adc.de und ADC Dashboard: weißer Grund, Inter als Schrift, Kopfleiste mit Link zum Dashboard. Sektionen-Icon ist jetzt ein Pin. Versionierung und Changelog eingeführt."},
   {v:"1.3.0", date:"3. Okt. 2026", text:"Dock-Leiste beim Scrollen, Bereiche per Link teilbar, Karte und Sektionsliste gekoppelt, weichere Animationen und Haptik. Diverse Korrekturen (Favicons, Tastaturbedienung, Ladezeit)."},
   {v:"1.2.0", date:"10. Aug. 2026", text:"Namen direkt als E-Mail-Link, ADC Creative Club und ADC Beats ergänzt, Favicons mit ADC-Logo."},

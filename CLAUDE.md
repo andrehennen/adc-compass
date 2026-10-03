@@ -7,7 +7,7 @@ Fachbereiche (Disziplinen), Initiativen/Ideen und "Büro & Ressourcen" (Kontakte
 - **Repo:** github.com/andrehennen/adc-compass (public)
 - **Deploy:** Vercel, Auto-Deploy bei Push auf `main`. Keine Build-Schritte nötig.
 - **Owner/Autor:** André Hennen (andre.hennen@adc.de), CCO Curious Company, incoming Sektionsvorstand ADC Hamburg (offiziell ab JHV Okt. 2026)
-- **Schwester-Projekt:** `andrehennen/adc` → ADC HH Dashboard (adc-hh-dashboard.vercel.app) — Ideen-/Initiativen-Tracking für Hamburg, gleiche Pipeline (GitHub+Vercel), teilt CI-Assets/Favicons
+- **Schwester-Projekt:** `andrehennen/adc` (lokal: `../adc-dashboard`) → „Dein ADC Dashboard“ (adc-germany-dashboard.vercel.app) — Ideen-/Initiativen-Tracking für den ganzen ADC (Sektionen + Gesamtverein), gleiche Pipeline (GitHub+Vercel), teilt CI-Assets/Favicons
 
 ## Struktur
 
@@ -25,9 +25,9 @@ Darunter erscheint beim Scrollen ein Dock mit denselben 4 Bereichen.
 Die Rose selbst ist **monochrom** (kein Farbcode pro Richtung) — Farbe lebt nur in Emojis/Akzenten.
 
 ### Datenmodelle (alle als JS-Objekte/Arrays im `<script>`)
-- `sektionen` — 7 Städte (hamburg, berlin, duesseldorf, dresden, frankfurt, stuttgart, muenchen), je mit `name, role, accent, emoji, people:[{who,what}], text`. Hamburg hat zusätzlich `transition` (Übergabe-Hinweis) und einen Link zum Ideen-Dashboard.
+- `sektionen` — 7 Städte (hamburg, berlin, duesseldorf, dresden, frankfurt, stuttgart, muenchen), je mit `name, role, accent, emoji, people:[{who,what}], text`. Hamburg hat zusätzlich `transition` (Übergabe-Hinweis) und einen Link zum ADC Dashboard.
 - `fachbereiche` — 7 Disziplinen, **alphabetisch sortiert**: Design, Digitale Medien, Editorial, Film & Ton, Forschung & Lehre, Spatial Experience, Werbung
-- `initiativen` — Ideen-Dashboard Hamburg, ADC Talents, Welcome to Creativity, Creative Club, ADC Beats, LADC, Future Females, Future Diversity, Mentoring, Speed-Recruiting, Fördermitglieder
+- `initiativen` — Dein ADC Dashboard, ADC Talents, Welcome to Creativity, Creative Club, ADC Beats, LADC, Future Females, Future Diversity, Mentoring, Speed-Recruiting, Fördermitglieder
 - `ci` — 5 Karten aus dem echten 2018-Manual: Typografie, Farben (mit echten Swatches), Logo & Bildmarke, Bildsprache, Vorlagen & Formate — plus feste Karte "Offizielles CI-Manual" (PDF-Link)
 - `formulare` — Mitgliedsantrag/Bewerbung, Stimmübertragung/Vollmacht (Platzhalter, "Vorlage folgt"), Anträge an den Vorstand (direkt an mitglieder@adc.de, Format: "Ich beantrage, dass …")
 
@@ -62,6 +62,8 @@ immer transparent machen, ob die Adresse bestätigt oder nur abgeleitet ist. **N
 ## Workflow / Gotchas
 
 - Kein Build-Step — einfach `index.html` editieren, committen, pushen.
+- **Standardregel (wie im Dashboard-Repo): Jede Änderung am Kompass wird committet und gepusht**, ohne
+  nachzufragen. Danach kurz sagen, was sich geändert hat. (Von André am 3.10.2026 so festgelegt.)
 - Vercel deployt automatisch bei Push auf `main`.
 - Bei großen Binär-Payloads (PDFs/PNGs) über die GitHub Contents API: niemals base64 direkt als
   `-d`-Argument an curl übergeben (`Argument list too long`) — immer über eine temp. JSON-Datei
@@ -71,7 +73,7 @@ immer transparent machen, ob die Adresse bestätigt oder nur abgeleitet ist. **N
   Falls das geändert werden soll: Privat schalten würde GitHub Pages/Vercel-Freetier-Setup berühren,
   noch nicht final entschieden.
 - Footer-Signatur-Format: "v[Version] · Stand [Monat Jahr] · Zusammengetragen und erstellt von André Hennen,
-  Curious Company · Datenquellen: ADC Büro, adc.de, Mitglieder und Ideen-Dashboard" — bei Content-Updates
+  Curious Company · Datenquellen: ADC Büro, adc.de, Mitglieder und ADC Dashboard" — bei Content-Updates
   "Stand" ggf. aktualisieren.
 - **Versionierung & Changelog:** SemVer-artig (`MAJOR.MINOR.PATCH`) — MINOR für neue Inhalte/Funktionen, PATCH für
   Korrekturen. Einzige Quelle ist das Array `changelog` im `<script>` von `index.html` (neuester Eintrag zuerst):
