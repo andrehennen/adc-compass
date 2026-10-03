@@ -74,6 +74,8 @@ immer transparent machen, ob die Adresse bestätigt oder nur abgeleitet ist. **N
 - **Standardregel (wie im Dashboard-Repo): Jede Änderung am Kompass wird committet und gepusht**, ohne
   nachzufragen. Danach kurz sagen, was sich geändert hat. (Von André am 3.10.2026 so festgelegt.)
 - Vercel deployt automatisch bei Push auf `main`.
+- **Vor jeder Änderung `git pull --rebase`:** Am Repo arbeiten mehrere Sessions parallel (lokal und Cloud).
+  Die Versionsnummer für den Changelog erst nach dem Pull festlegen.
 - Bei großen Binär-Payloads (PDFs/PNGs) über die GitHub Contents API: niemals base64 direkt als
   `-d`-Argument an curl übergeben (`Argument list too long`) – immer über eine temp. JSON-Datei
   und `curl --data @payload.json`. (Lokal mit normalem `git push` ohnehin irrelevant – betrifft nur
