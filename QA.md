@@ -30,11 +30,15 @@ Gemessen im eingebauten Chromium auf 320, 390, 768, 1024, 1280 und 1440 px, alle
 - PageSpeed/Core Web Vitals (API-Kontingent erschöpft) – von Hand auf pagespeed.web.dev prüfen.
 - Haptik und Homescreen-Icon auf echtem iPhone/Android.
 
-## Offene Entscheidungen des Inhabers
-- Impressum und Datenschutzerklärung fehlen (das Dashboard hat beide).
-- Indexierung: Suchmaschinen zulassen (dann `robots.txt` + `sitemap.xml`) oder `noindex`.
-- Rechtschreib-Befunde (Liste im Chat vom 13.10.2026) freigeben.
-- Fließtext in Karten ist 14 px; Richtwert fürs Handy wäre 16 px (weicht dann vom Dashboard ab).
+## Entscheidungen des Inhabers (13.10.2026)
+- **Impressum und Datenschutz:** eigene Seiten `/impressum` und `/datenschutz`, Basis sind die Texte des Dashboards
+  (dort bereits abgestimmt), angepasst an den Kompass. Abschnitt 4 der Datenschutzerklärung (Rechtsgrundlage für
+  die genannten Personen) ist neu formuliert und sollte fachlich gegengelesen werden.
+- **Indexierung:** nicht indexieren. `noindex` als Meta-Tag und `X-Robots-Tag`-Header; `robots.txt` erlaubt den Abruf
+  (sonst sehen Suchmaschinen das `noindex` nicht) und sperrt KI-Crawler.
+- **Rechtschreibung:** Befunde 1–6 freigegeben und umgesetzt, per Wort-Vergleich kontrolliert (v1.6.7).
+- **Schriftgröße:** Fließtext in Karten bleibt bei 14 px wie im Dashboard.
+- Offen, nur gemeldet: „Gründungsort des ADC Deutschland (1964)“ bei Köln/Düsseldorf – welche Stadt ist gemeint?
 
 ## Bekannte, bewusst belassene Punkte
 - CSP erlaubt `'unsafe-inline'` für Skript und Stil, weil alles in einer Datei ohne Build liegt.

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ADC Kompass</title>
 <meta name="description" content="Orientierung für ADC-Mitglieder: Sektionen, Fachbereiche, Initiativen sowie Büro, Formulare und CI auf einen Blick.">
+<meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <meta property="og:title" content="ADC Kompass">
@@ -280,6 +281,8 @@
   .foot-btn[aria-expanded="true"]{color:var(--ink);}
   .foot-btn[aria-expanded="true"]::after{content:" ▴";}
   .foot-btn:hover{color:var(--ink);}
+  .foot-link{font-weight:600;color:var(--ink-2);text-decoration:none;padding:4px 2px;}
+  .foot-link:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px;}
   .foot-panel:not([hidden]){animation:drop .4s var(--spring);}
   @keyframes drop{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:none;}}
   ol.changelog{list-style:none;text-align:left;max-width:640px;margin:12px auto 16px;padding:0;display:flex;flex-direction:column;gap:8px;}
@@ -416,7 +419,7 @@
   <!-- RESSOURCEN (Büro, Formulare, CI) -->
   <section class="panel" id="panel-ressourcen">
     <h2 class="panel-title">Büro &amp; Ressourcen</h2>
-    <p class="intro-line">Verwaltung, Formulare und CI – alles rund um e.V. und GmbH.</p>
+    <p class="intro-line">Verwaltung, Formulare und CI – alles rund um e.&nbsp;V. und GmbH.</p>
     <div class="subnav">
       <button class="subnav-btn active" aria-pressed="true" data-sub="buero">ADC Büro</button>
       <button class="subnav-btn" aria-pressed="false" data-sub="formulare">Formulare</button>
@@ -447,14 +450,14 @@
           <div class="icon-wrap" aria-hidden="true">🤝</div>
           <h3>Sponsoring</h3>
           <div class="role">Für Unternehmen</div>
-          <p>Der ADC ist ein nicht-gewinnorientierter Verein – alles, was der Club macht, passiert auch dank Sponsor:innen. Firmen werden Partner z.&nbsp;B. beim ADC Festival, der Design oder Digital Conference und erhalten Zugang zu Talenten, Reichweite und dem kreativen Netzwerk.</p>
+          <p>Der ADC ist ein nicht gewinnorientierter Verein – alles, was der Club macht, passiert auch dank Sponsor:innen. Firmen werden Partner z.&nbsp;B. beim ADC Festival, der Design oder Digital Conference und erhalten Zugang zu Talenten, Reichweite und dem kreativen Netzwerk.</p>
           <div class="contact-line"><span class="who"><a href="mailto:valentin.goetz@adc.de">Valentin Götz</a></span><span class="what">– Ansprechpartner Partnerschaften</span></div>
         </div>
         <div class="card" style="--accent:var(--c-gold)">
           <div class="icon-wrap" aria-hidden="true">💛</div>
           <h3>Fördermitglieder</h3>
           <div class="role">Netzwerk für Unternehmen</div>
-          <p>Fördermitgliedschaft unterstützt die nicht-gewinnorientierte Arbeit des ADC – Programme wie ADC Future Females, ADC Future Diversity oder die Nachwuchsformate laufen nur dank dieser Förderung. Schon rund 30 Unternehmen sind dabei, von BBDO bis Getty Images.</p>
+          <p>Fördermitgliedschaft unterstützt die nicht gewinnorientierte Arbeit des ADC – Programme wie ADC Future Females, ADC Future Diversity oder die Nachwuchsformate laufen nur dank dieser Förderung. Schon rund 30 Unternehmen sind dabei, von BBDO bis Getty Images.</p>
           <div class="contact-line"><span class="who">Mitgliederbetreuung</span><span class="what">– Ansprechpartner:innen im ADC Büro</span></div>
           <div class="actions">
             <a class="cta" href="mailto:mitglieder@adc.de">mitglieder@adc.de</a>
@@ -479,6 +482,8 @@
   <div class="wrap">
     <div class="foot-row">
       <button class="foot-btn" type="button" id="cl-btn" aria-expanded="false" aria-controls="cl-list">Changelog</button>
+      <a class="foot-link" href="/impressum">Impressum</a>
+      <a class="foot-link" href="/datenschutz">Datenschutz</a>
     </div>
     <ol class="foot-panel changelog" id="cl-list" hidden></ol>
     <div class="legal"><span id="version"></span> · Stand Oktober 2026 · Zusammengetragen und erstellt von André Hennen, Curious Company · Datenquellen: ADC Büro, adc.de, Mitglieder und <a href="https://adc-germany-dashboard.vercel.app/" target="_blank" rel="noopener">ADC Dashboard</a></div>
@@ -512,7 +517,7 @@ const sektionen = {
     text:"Ehemaliger Festival-Standort (2010–2012), heute aktive Sektion mit eigenem Creative Club."},
   stuttgart: {name:"Stuttgart", role:"Sektion", accent:"var(--c-purple)", emoji:"🚗", people:[{who:'<a href="mailto:patrick.amor@adc.de">Patrick Amor</a>', what:"CD &amp; Standortleiter, C3 Creative Code and Content"}],
     text:"Ausrichter der ADC Design Conference im Haus der Wirtschaft."},
-  muenchen: {name:"München", role:"Sektion", accent:"var(--c-sky)", emoji:"🍺", people:[{who:'<a href="mailto:matthias.harbeck@adc.de">Matthias Harbeck</a>', what:"Partner &amp; CCO, Saint Elmo's"}],
+  muenchen: {name:"München", role:"Sektion", accent:"var(--c-sky)", emoji:"🍺", people:[{who:'<a href="mailto:matthias.harbeck@adc.de">Matthias Harbeck</a>', what:"Partner &amp; CCO, Saint Elmo’s"}],
     text:"Eine der mitgliederstärksten Sektionen im Süden."}
 };
 
@@ -532,7 +537,7 @@ const initiativen = [
   {icon:"👋", accent:"var(--c-indigo)", name:"ADC Welcome to Creativity", role:"Programm", text:"Einstiegsprogramm für alle, die frisch in die Kreativbranche kommen."},
   {icon:"🎤", accent:"var(--c-coral)", name:"ADC Creative Club", role:"Netzwerk für Talente", text:"Talente präsentieren ihre Arbeiten und vernetzen sich mit der Branche.", who:'<a href="mailto:elisabeth.plass@adc.de">Elly Plass</a>'},
   {icon:"🎵", accent:"var(--c-sky)", name:"ADC Beats", role:"Plattform", text:"Bringt Artists, Songwriter:innen, Creatives, Agenturen &amp; Brands zusammen.", who:'<a href="mailto:henan.wensink@adc.de">Henan Wensink</a> · <a href="mailto:jan.fincke@adc.de">Jan Fincke</a>'},
-  {icon:"👑", accent:"var(--c-pink)", name:"LADC – Ladies' Art Directors Club", role:"Netzwerk", text:"2024 von Dörte Spengler-Ahrens neu gestartet: Vernetzung, Empowerment und Sichtbarkeit für Frauen im Club.", who:'<a href="mailto:doerte.spenglerahrens@adc.de">Dörte Spengler-Ahrens</a>'},
+  {icon:"👑", accent:"var(--c-pink)", name:"LADC – Ladies’ Art Directors Club", role:"Netzwerk", text:"2024 von Dörte Spengler-Ahrens neu gestartet: Vernetzung, Empowerment und Sichtbarkeit für Frauen im Club.", who:'<a href="mailto:doerte.spenglerahrens@adc.de">Dörte Spengler-Ahrens</a>'},
   {icon:"🚀", accent:"var(--c-purple)", name:"ADC Future Females", role:"Programm", text:"Leadership-Programm für Frauen in der Kreativwirtschaft."},
   {icon:"🌍", accent:"var(--c-sky)", name:"ADC Future Diversity", role:"Programm", text:"„Kreativität braucht unterschiedliche Menschen.“ Diversity- und Age-Initiativen des Clubs."},
   {icon:"🤝", accent:"var(--c-teal)", name:"ADC Mentoring", role:"Programm", text:"Kostenloses Mentoring für alle in der Kreativwirtschaft – erfahrene Mitglieder begleiten Berufseinsteiger:innen."},
@@ -563,8 +568,8 @@ const ci = [
     {label:"Wort-Bildmarke Schwarz (PNG)", url:"ci/adc-wortbildmarke-schwarz.png"},
     {label:"Wort-Bildmarke Weiß (PNG)", url:"ci/adc-wortbildmarke-weiss.png"}
   ]},
-  {icon:"📸", accent:"var(--c-indigo)", name:"Bildsprache", text:"Mitgliederportraits ausschließlich Schwarz/Weiß, Gesicht immer klar im Fokus – keine Handy-Selfies oder Filter. Arbeiten/Keyvisuals werden dynamisch angeschnitten, das Logo mittelachsial platziert."},
-  {icon:"📐", accent:"var(--c-coral)", name:"Vorlagen &amp; Formate", text:"Digitale Formate laut Manual: Stage Desktop 1920×1008px, Stage Mobile 900×750px, Instagram Story 1080×1920px. Druckvorlagen (Briefbogen, Visitenkarte) folgen als Datei.", status:"Dateivorlagen folgen"}
+  {icon:"📸", accent:"var(--c-indigo)", name:"Bildsprache", text:"Mitgliederporträts ausschließlich Schwarz/Weiß, Gesicht immer klar im Fokus – keine Handy-Selfies oder Filter. Arbeiten/Keyvisuals werden dynamisch angeschnitten, das Logo mittelachsial platziert."},
+  {icon:"📐", accent:"var(--c-coral)", name:"Vorlagen &amp; Formate", text:"Digitale Formate laut Manual: Stage Desktop 1920&nbsp;×&nbsp;1008&nbsp;px, Stage Mobile 900&nbsp;×&nbsp;750&nbsp;px, Instagram Story 1080&nbsp;×&nbsp;1920&nbsp;px. Druckvorlagen (Briefbogen, Visitenkarte) folgen als Datei.", status:"Dateivorlagen folgen"}
 ];
 
 /* ---------- Rendering: eine Karten-Funktion für alle Bereiche ---------- */
@@ -615,6 +620,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.6.7", date:"13. Okt. 2026", text:"Impressum und Datenschutz ergänzt. Die Seite ist jetzt für Suchmaschinen gesperrt. Kleine Rechtschreib- und Typografie-Korrekturen in den Texten."},
   {v:"1.6.6", date:"13. Okt. 2026", text:"Qualitätsrunde: Sicherheits-Header, Sprunglink und ruhigere Vorlese-Ausgabe für Screenreader, Vorschaubild für geteilte Links, schnelleres Laden des Logos, ausgeglichene Zeilenumbrüche in Überschriften, eigene Fehlerseite."},
   {v:"1.6.5", date:"4. Okt. 2026", text:"Neues App-Icon für den Homescreen: schwarzes ADC-Logo auf Weiß, etwas kleiner – so ist der Kompass vom Dashboard (weiß auf Schwarz) zu unterscheiden. Alle Karten-Pins sehen jetzt gleich aus."},
   {v:"1.6.4", date:"4. Okt. 2026", text:"Deutschlandkarte überarbeitet: feinerer Umriss mit Inseln (Rügen, Usedom, Fehmarn, Sylt u. a.), besser lesbare Städtenamen, ruhigerer Puls, Pin für Köln/Düsseldorf zwischen beiden Städten."},

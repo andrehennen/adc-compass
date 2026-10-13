@@ -20,6 +20,12 @@ Assets liegen direkt im Repo:
   der Kantenlänge (Dashboard: weißes Logo auf Schwarz – so sind beide auf dem Homescreen unterscheidbar).
   Bei neuen Icons `?v=` in den Verweisen hochzählen, sonst zeigen Geräte das alte aus dem Cache.
 
+- `impressum.html`, `datenschutz.html`, `404.html` – eigene Seiten (Basis: Texte des Dashboards), im Footer verlinkt
+- `vercel.json` – Sicherheits-Header (CSP etc.), `noindex`, saubere URLs; `.vercelignore` hält `CLAUDE.md`, `QA.md`, `qr/` aus dem Deploy
+- `robots.txt`, `.well-known/security.txt`, `og-image.png` (Link-Vorschau), `logo-adc.png` (kleines Kopf-Logo)
+- `QA.md` – Messwerte und Entscheidungen der Qualitätsprüfung (Website Endboss)
+- **Die Seite ist bewusst für Suchmaschinen gesperrt** (Entscheidung André, 13.10.2026).
+
 ### Navigation
 Kompass-Rose mit 4 Himmelsrichtungen (bewusst reduziert von 6 auf 4 – mehr wirkte überladen):
 Sektionen 📍 · Fachbereiche 🎨 · Ideen & Initiativen 💡 · Büro & Ressourcen 🗂️
