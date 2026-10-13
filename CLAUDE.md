@@ -39,7 +39,7 @@ Die Rose selbst ist **monochrom** (kein Farbcode pro Richtung) – Farbe lebt nu
 - `sektionen` – 7 Städte (hamburg, berlin, duesseldorf → „Köln/Düsseldorf“, leipzig, frankfurt, stuttgart, muenchen), je mit `name, role, accent, emoji, people:[{who,what}], text`. Optional `transition` (Hinweis-Tag, aktuell nirgends genutzt). Hamburg hat einen Link zum ADC Dashboard.
 - `fachbereiche` – 8 Disziplinen, **alphabetisch sortiert**: Design, Digital, Editorial, Film & Audio, Forschung & Lehre, Social Media (neu seit JHV 2026), Spatial Experience, Werbung. Optional `tag`.
 - Präsidium = Stand nach JHV Okt. 2026 (7 Sektionen + 8 Fachbereiche + kooptiert: Sarah Köster für ADC Talents)
-- `initiativen` – Dein ADC Dashboard, ADC Talents, Welcome to Creativity, Creative Club, ADC Beats, LADC, Future Females, Future Diversity, Mentoring, Speed-Recruiting, Fördermitglieder
+- `initiativen` – werden beim Rendern **alphabetisch nach Namen sortiert** (Reihenfolge im Array egal): ADC Beats, ADC Creative Club, ADC Dashboard, ADC Future Diversity, ADC Future Females, ADC Mentoring, ADC Talents, ADC Welcome to Creativity, Fördermitglieder, LADC, Speed-Recruiting
 - `ci` – 5 Karten aus dem echten 2018-Manual: Typografie, Farben (mit echten Swatches), Logo & Bildmarke, Bildsprache, Vorlagen & Formate – plus feste Karte "Offizielles CI-Manual" (PDF-Link)
 - `formulare` – Mitgliedsantrag/Bewerbung, Stimmübertragung/Vollmacht (Platzhalter, "Vorlage folgt"), Anträge an den Vorstand (direkt an mitglieder@adc.de, Format: "Ich beantrage, dass …")
 
