@@ -11,7 +11,15 @@
 <meta property="og:description" content="Wer macht was, wo, und wie machst du mit? Sektionen, Fachbereiche, Initiativen, Büro &amp; Ressourcen des ADC.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://adc-compass.vercel.app/">
-<meta property="og:image" content="https://adc-compass.vercel.app/favicon-512.png?v=2">
+<meta property="og:image" content="https://adc-compass.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ADC Kompass – Art Directors Club für Deutschland">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="ADC Kompass">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://adc-compass.vercel.app/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ADC Kompass","url":"https://adc-compass.vercel.app/","inLanguage":"de-DE","description":"Orientierung für ADC-Mitglieder: Sektionen, Fachbereiche, Initiativen sowie Büro, Formulare und CI auf einen Blick.","author":{"@type":"Person","name":"André Hennen"},"about":{"@type":"Organization","name":"Art Directors Club für Deutschland (ADC) e. V.","url":"https://www.adc.de/"}}</script>
 <link rel="icon" href="favicon.ico?v=2" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
 <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png?v=2">
@@ -47,6 +55,8 @@
   }
   *{box-sizing:border-box;}
   [hidden]{display:none !important;}
+  .skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;font-size:14px;font-weight:600;padding:9px 14px;border-radius:999px;text-decoration:none;transition:top .2s ease;}
+  .skip:focus{top:10px;}
   html,body{margin:0;padding:0;}
   html{
     scroll-behavior:smooth;
@@ -59,6 +69,7 @@
     color:var(--ink);
     font-family:'Inter',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
     font-size:15px;line-height:1.5;
+    font-synthesis:none;
     min-height:100vh;
     cursor:default;
   }
@@ -105,6 +116,8 @@
     font-size:clamp(32px,4.6vw,52px);font-weight:800;letter-spacing:-.035em;line-height:1.02;
     margin:8px 0 0;
   }
+  h1, h2, h3{text-wrap:balance;}
+  p, .what{text-wrap:pretty;}
   .lead{font-size:16px;color:var(--ink-2);max-width:520px;margin:12px 0 0;line-height:1.5;}
 
   /* COMPASS ROSE NAV – Zifferblatt in der Mitte, die vier Bereiche als Punkte außen herum */
@@ -182,7 +195,7 @@
   .pin .hit{cursor:pointer;}
   .pin circle.dot{fill:#fff;stroke:var(--ink);stroke-width:2;transition:fill .2s ease, transform .3s var(--spring);transform-box:fill-box;transform-origin:center;}
   .pin circle.ping{fill:none;stroke:var(--ink);stroke-width:1.5;vector-effect:non-scaling-stroke;opacity:.4;transform-box:fill-box;transform-origin:center;animation:ping 3.2s ease-out infinite;}
-  .pin text{fill:var(--ink-2);font-family:inherit;font-size:11.5px;font-weight:500;transition:fill .2s ease;paint-order:stroke;stroke:var(--soft);stroke-width:3px;stroke-linejoin:round;}
+  .pin text{fill:var(--ink-2);font-family:inherit;font-size:11.5px;font-weight:400;transition:fill .2s ease;paint-order:stroke;stroke:var(--soft);stroke-width:3px;stroke-linejoin:round;}
   @media(hover:hover){.pin:hover circle.dot{fill:var(--ink);} .pin:hover text{fill:var(--ink);}}
   .pin.active circle.dot{fill:var(--ink);transform:scale(1.33);}
   .pin.active circle.ping{stroke-width:2;}
@@ -210,7 +223,7 @@
   .sektion-list .card{scroll-margin:calc(var(--top-h) + 20px) 0 24px;}
   .card h3{font-size:20px;margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.25;}
   .card .role{font-size:12px;font-weight:700;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-top:2px;}
-  .card p{font-size:14px;line-height:1.55;color:var(--ink-2);margin:8px 0 0;}
+  .card p{font-size:14px;line-height:1.5;color:var(--ink-2);margin:8px 0 0;-webkit-hyphens:auto;hyphens:auto;}
   .card address{margin-top:10px;}
   .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
   .card p strong{color:var(--ink);font-weight:600;}
@@ -229,7 +242,7 @@
     padding:3px 9px;border-radius:999px;
   }
   .swatches{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:12px;}
-  .swatch{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--ink-2);}
+  .swatch{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:400;color:var(--ink-2);}
   .swatch i{width:16px;height:16px;border-radius:50%;border:1px solid var(--line-strong);display:inline-block;}
 
   /* GRID CARDS */
@@ -254,7 +267,7 @@
   .subnav-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
   .subpanel{display:none;animation:fade .4s var(--spring);}
   .subpanel.active{display:block;}
-  address{font-style:normal;font-size:14px;line-height:1.6;color:var(--ink-2);}
+  address{font-style:normal;font-size:14px;line-height:1.5;color:var(--ink-2);}
 
   /* FOOTER */
   footer{
@@ -272,7 +285,7 @@
   ol.changelog{list-style:none;text-align:left;max-width:640px;margin:12px auto 16px;padding:0;display:flex;flex-direction:column;gap:8px;}
   .changelog li{font-size:13px;color:var(--ink-2);line-height:1.45;}
   .changelog b{color:var(--ink);}
-  .legal{line-height:1.6;}
+  .legal{line-height:1.5;}
   .legal a{text-underline-offset:3px;}
 
   /* DOCK – schwebende Tab-Leiste, erscheint erst, wenn die Kompass-Rose aus dem Bild gescrollt ist */
@@ -307,14 +320,15 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
 <header class="top">
   <div class="wrap top-in">
-    <a class="brand" href="./" aria-label="ADC Kompass Startseite"><img src="ci/adc-monogramm-schwarz.png" width="37" height="34" alt="ADC Logo"></a>
-    <a class="btn" href="https://adc-germany-dashboard.vercel.app/" target="_blank" rel="noopener">💡 ADC Dashboard</a>
+    <a class="brand" href="./" aria-label="ADC Kompass Startseite"><img src="logo-adc.png" width="37" height="34" alt="ADC Logo"></a>
+    <a class="btn" href="https://adc-germany-dashboard.vercel.app/" target="_blank" rel="noopener"><span aria-hidden="true">💡</span> ADC Dashboard</a>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="inhalt">
 
   <div class="hero">
     <div class="hero-txt">
@@ -335,10 +349,10 @@
             </g>
           </g>
         </svg>
-        <button class="rose-pt active" aria-pressed="true" data-tab="sektionen" data-deg="0"><span class="pt-ic">📍</span><span class="sub-label">Sektionen</span></button>
-        <button class="rose-pt" aria-pressed="false" data-tab="fachbereiche" data-deg="90"><span class="pt-ic">🎨</span><span class="sub-label">Fachbereiche</span></button>
-        <button class="rose-pt" aria-pressed="false" data-tab="initiativen" data-deg="180"><span class="pt-ic">💡</span><span class="sub-label">Ideen &amp; Initiativen</span></button>
-        <button class="rose-pt" aria-pressed="false" data-tab="ressourcen" data-deg="270"><span class="pt-ic">🗂️</span><span class="sub-label">Büro &amp; Ressourcen</span></button>
+        <button class="rose-pt active" aria-pressed="true" data-tab="sektionen" data-deg="0"><span class="pt-ic" aria-hidden="true">📍</span><span class="sub-label">Sektionen</span></button>
+        <button class="rose-pt" aria-pressed="false" data-tab="fachbereiche" data-deg="90"><span class="pt-ic" aria-hidden="true">🎨</span><span class="sub-label">Fachbereiche</span></button>
+        <button class="rose-pt" aria-pressed="false" data-tab="initiativen" data-deg="180"><span class="pt-ic" aria-hidden="true">💡</span><span class="sub-label">Ideen &amp; Initiativen</span></button>
+        <button class="rose-pt" aria-pressed="false" data-tab="ressourcen" data-deg="270"><span class="pt-ic" aria-hidden="true">🗂️</span><span class="sub-label">Büro &amp; Ressourcen</span></button>
       </div>
     </nav>
   </div>
@@ -412,7 +426,7 @@
     <div class="subpanel active" id="sub-buero">
       <div class="buero-hero">
         <div class="card" style="--accent:var(--c-gold)">
-          <div class="icon-wrap">🏛️</div>
+          <div class="icon-wrap" aria-hidden="true">🏛️</div>
           <h3>ADC Büro Berlin</h3>
           <div class="role">Geschäftsstelle</div>
           <p>Rund 15 Angestellte organisieren Veranstaltungen, Publikationen, Seminare, Mentoring, PR, Marketing, Mitgliederbetreuung und Finanzen. Ein geschäftsführender Vorstand hält den Laden operativ zusammen; das ehrenamtliche Präsidium (7 Sektions- und 8 Fachbereichsvorstände, dazu kooptierte Mitglieder) trifft die inhaltlichen Entscheidungen.</p>
@@ -423,21 +437,21 @@
           </div>
         </div>
         <div class="card" style="--accent:var(--c-pink)">
-          <div class="icon-wrap">📣</div>
+          <div class="icon-wrap" aria-hidden="true">📣</div>
           <h3>PR &amp; Marketing</h3>
           <div class="role">Ansprechpartnerinnen</div>
           <div class="contact-line"><span class="who"><a href="mailto:susann.ruscher@adc.de">Susann Ruscher</a></span><span class="what">– Senior Projektmanagerin PR &amp; Marketing</span></div>
           <div class="contact-line"><span class="who"><a href="mailto:marion.fichtelmann@adc.de">Marion Fichtelmann</a></span><span class="what">– Publikationen &amp; Bestellungen (z.&nbsp;B. Pitch Survival Guide)</span></div>
         </div>
         <div class="card" style="--accent:var(--c-sky)">
-          <div class="icon-wrap">🤝</div>
+          <div class="icon-wrap" aria-hidden="true">🤝</div>
           <h3>Sponsoring</h3>
           <div class="role">Für Unternehmen</div>
           <p>Der ADC ist ein nicht-gewinnorientierter Verein – alles, was der Club macht, passiert auch dank Sponsor:innen. Firmen werden Partner z.&nbsp;B. beim ADC Festival, der Design oder Digital Conference und erhalten Zugang zu Talenten, Reichweite und dem kreativen Netzwerk.</p>
           <div class="contact-line"><span class="who"><a href="mailto:valentin.goetz@adc.de">Valentin Götz</a></span><span class="what">– Ansprechpartner Partnerschaften</span></div>
         </div>
         <div class="card" style="--accent:var(--c-gold)">
-          <div class="icon-wrap">💛</div>
+          <div class="icon-wrap" aria-hidden="true">💛</div>
           <h3>Fördermitglieder</h3>
           <div class="role">Netzwerk für Unternehmen</div>
           <p>Fördermitgliedschaft unterstützt die nicht-gewinnorientierte Arbeit des ADC – Programme wie ADC Future Females, ADC Future Diversity oder die Nachwuchsformate laufen nur dank dieser Förderung. Schon rund 30 Unternehmen sind dabei, von BBDO bis Getty Images.</p>
@@ -565,7 +579,7 @@ function linkHTML(l, cls="cta"){
 function cardHTML(c){
   return `
   <div class="card"${c.id ? ` id="${c.id}"` : ""}>
-    <div class="icon-wrap">${c.icon}</div>
+    <div class="icon-wrap" aria-hidden="true">${c.icon}</div>
     <h3>${c.name}</h3>
     ${c.role ? `<div class="role">${c.role}</div>` : ""}
     <p>${c.text}</p>
@@ -601,6 +615,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.6.6", date:"13. Okt. 2026", text:"Qualitätsrunde: Sicherheits-Header, Sprunglink und ruhigere Vorlese-Ausgabe für Screenreader, Vorschaubild für geteilte Links, schnelleres Laden des Logos, ausgeglichene Zeilenumbrüche in Überschriften, eigene Fehlerseite."},
   {v:"1.6.5", date:"4. Okt. 2026", text:"Neues App-Icon für den Homescreen: schwarzes ADC-Logo auf Weiß, etwas kleiner – so ist der Kompass vom Dashboard (weiß auf Schwarz) zu unterscheiden. Alle Karten-Pins sehen jetzt gleich aus."},
   {v:"1.6.4", date:"4. Okt. 2026", text:"Deutschlandkarte überarbeitet: feinerer Umriss mit Inseln (Rügen, Usedom, Fehmarn, Sylt u. a.), besser lesbare Städtenamen, ruhigerer Puls, Pin für Köln/Düsseldorf zwischen beiden Städten."},
   {v:"1.6.3", date:"4. Okt. 2026", text:"Abstände aufgeräumt: kompakterer Kopfbereich, Karte ohne Leerraum, einheitliche Abstände in den Karten und zwischen Buttons."},
@@ -628,6 +643,8 @@ document.getElementById('cl-btn').addEventListener('click', e=>{
 /* ---------- Haptik: Vibration (Android) bzw. Switch-Tick (iOS Safari), sonst still ---------- */
 const hapticLabel = document.getElementById('haptic');
 function haptic(){
+  // nur bei echter Nutzeraktion, sonst blockt der Browser den Aufruf mit Konsolenfehler
+  if(navigator.userActivation && !navigator.userActivation.isActive) return;
   try{
     if(navigator.vibrate) navigator.vibrate(8);
     else hapticLabel.click();
