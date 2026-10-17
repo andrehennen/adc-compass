@@ -433,6 +433,7 @@
           <h3>ADC Büro Berlin</h3>
           <div class="role">Geschäftsstelle</div>
           <p>Rund 15 Angestellte organisieren Veranstaltungen, Publikationen, Seminare, Mentoring, PR, Marketing, Mitgliederbetreuung und Finanzen. Ein geschäftsführender Vorstand hält den Laden operativ zusammen; das ehrenamtliche Präsidium (7 Sektions- und 8 Fachbereichsvorstände, dazu kooptierte Mitglieder) trifft die inhaltlichen Entscheidungen.</p>
+          <p>Präsidiumssprecher: <strong>Burkhard Müller</strong> (CDO, Mutabor), seit der JHV 2026 in zweiter Amtszeit.</p>
           <address>Art Directors Club für Deutschland e. V.<br>Salzufer 15–16, Kontorhaus<br>10587 Berlin</address>
           <div class="actions">
             <a class="cta" href="mailto:adc@adc.de">adc@adc.de</a>
@@ -523,7 +524,7 @@ const sektionen = {
 
 const fachbereiche = [
   {icon:"🎨", accent:"var(--c-teal)", name:"Design", who:'<a href="mailto:elisabeth.plass@adc.de">Elisabeth Plass</a>', role:"Inhaberin &amp; CD, EIGA Design", text:"Corporate Design, Branding und visuelle Identität."},
-  {icon:"💻", accent:"var(--c-sky)", name:"Digital", who:'<a href="mailto:burkhard.mueller@adc.de">Burkhard Müller</a>', role:"CDO, Mutabor", text:"Digitale Produkte, Interfaces und Kampagnen."},
+  {icon:"💻", accent:"var(--c-sky)", name:"Digital", who:'<a href="mailto:burkhard.mueller@adc.de">Burkhard Müller</a>', role:"CDO, Mutabor – Präsidiumssprecher", text:"Digitale Produkte, Interfaces und Kampagnen."},
   {icon:"📰", accent:"var(--c-pink)", name:"Editorial", who:'<a href="mailto:sina.otto@adc.de">Sina Otto</a>', role:"Art Director &amp; Type Designerin, selbstständig", text:"Wort- und Bildwelten in Zeitschriften, Verlagen und Publishing."},
   {icon:"🎬", accent:"var(--c-indigo)", name:"Film &amp; Audio", who:'<a href="mailto:jan.fincke@adc.de">Jan Fincke</a>', role:"Managing Director &amp; Partner, CZAR Film", text:"Bewegtbild, Sound und alles, was läuft und klingt."},
   {icon:"🎓", accent:"var(--c-gold)", name:"Forschung &amp; Lehre", who:'<a href="mailto:richard.jung@adc.de">Prof. Richard Jung</a>', role:"Professor für Kommunikationsdesign", text:"Verbindung von Hochschulen, Nachwuchs und Praxis."},
@@ -533,7 +534,7 @@ const fachbereiche = [
 ];
 const initiativen = [
   {icon:"💡", accent:"var(--c-coral)", name:"ADC Dashboard", role:"Mitmachen · offen für alle", text:"Alle Ideen und Initiativen im ADC auf einen Blick – aus den Sektionen und dem Gesamtverein: was läuft, wer sich kümmert, was als Nächstes passiert. Schnapp dir eine offene Idee, stimm ab oder bring eine eigene ein.", who:'<a href="mailto:andre.hennen@adc.de">André Hennen</a>', link:{label:"Dashboard öffnen", url:"https://adc-germany-dashboard.vercel.app/"}},
-  {icon:"🎓", accent:"var(--c-gold)", name:"ADC Talents", role:"Netzwerk für Nachwuchs", text:"Gewinner:innen des ADC Talent Award nutzen 5 Jahre kostenlos das gesamte ADC-Netzwerk.", who:'<a href="mailto:sarah.koester@adc.de">Sarah Köster</a> (Sprecherin, kooptiert im Präsidium) · <a href="mailto:etienne.wagner@adc.de">Etienne Wagner</a> (Vize)'},
+  {icon:"🎓", accent:"var(--c-gold)", name:"ADC Talents", role:"Netzwerk für Nachwuchs", text:"Wer beim ADC Talent Award einen goldenen Nagel gewinnt, nutzt 5 Jahre kostenlos das ADC-Netzwerk und ist als Gast bei allen Sektions- und Fachbereichstreffen, ADC Events und Jurysitzungen willkommen. Seit Ende 2024 vertreten gewählte Sprecher:innen die Talents beratend im Präsidium (ohne Stimmrecht). Vorhaben: eine Anlaufstelle für Fragen zum Berufseinstieg, ein digitales Onboarding für neue Talents, Live-Events an Hochschulen und mehr Raum für Talent-Projekte in Sektions- und Fachbereichstreffen.", who:'<a href="mailto:sarah.koester@adc.de">Sarah Köster</a> (Sprecherin, kooptiert im Präsidium) · <a href="mailto:etienne.wagner@adc.de">Etienne Wagner</a> (Vize)'},
   {icon:"👋", accent:"var(--c-indigo)", name:"ADC Welcome to Creativity", role:"Programm", text:"Einstiegsprogramm für alle, die frisch in die Kreativbranche kommen."},
   {icon:"🎤", accent:"var(--c-coral)", name:"ADC Creative Club", role:"Netzwerk für Talente", text:"Talente präsentieren ihre Arbeiten und vernetzen sich mit der Branche.", who:'<a href="mailto:elisabeth.plass@adc.de">Elly Plass</a>'},
   {icon:"🎵", accent:"var(--c-sky)", name:"ADC Beats", role:"Plattform", text:"Bringt Artists, Songwriter:innen, Creatives, Agenturen &amp; Brands zusammen.", who:'<a href="mailto:henan.wensink@adc.de">Henan Wensink</a> · <a href="mailto:jan.fincke@adc.de">Jan Fincke</a>'},
@@ -621,6 +622,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.7.0", date:"17. Okt. 2026", text:"ADC Talents: Einbindung ins Präsidium, Gastrechte und Vorhaben ergänzt. Burkhard Müller als bestätigter Präsidiumssprecher wieder eingetragen."},
   {v:"1.6.8", date:"13. Okt. 2026", text:"Ideen &amp; Initiativen alphabetisch sortiert; die Dashboard-Kachel heißt jetzt „ADC Dashboard“."},
   {v:"1.6.7", date:"13. Okt. 2026", text:"Impressum und Datenschutz ergänzt. Die Seite ist jetzt für Suchmaschinen gesperrt. Kleine Rechtschreib- und Typografie-Korrekturen in den Texten."},
   {v:"1.6.6", date:"13. Okt. 2026", text:"Qualitätsrunde: Sicherheits-Header, Sprunglink und ruhigere Vorlese-Ausgabe für Screenreader, Vorschaubild für geteilte Links, schnelleres Laden des Logos, ausgeglichene Zeilenumbrüche in Überschriften, eigene Fehlerseite."},

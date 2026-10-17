@@ -107,7 +107,8 @@ immer transparent machen, ob die Adresse bestätigt oder nur abgeleitet ist. **N
 
 ## Offene Punkte
 
-- Präsidiumssprecher:in + Vize werden nach der JHV 2026 noch gewählt – danach Zeile in der Büro-Karte wieder ergänzen.
+- Präsidiumssprecher: Burkhard Müller auf der JHV (ca. 15.10.2026) bestätigt (Quelle: Campaign Germany). Vize noch unbekannt.
+- ADC Talents: Sarah Köster (Sprecherin) und Etienne Wagner (Vize), beratend im Präsidium ohne Stimmrecht (Quellen: adc.de 11/2024, PAGE 05/2025).
 - Neue Präsidiumsmitglieder (Sina Otto, Nina Wiemer, Till Diestel, Julius Winter): E-Mails nur musterbasiert. Rollen per Web-Recherche (Okt. 2026) ergänzt und von André bestätigt.
 - Dörte Spengler-Ahrens nur noch bei LADC; ihre Adresse `doerte.spenglerahrens@adc.de` (weicht vom Muster ab) ist ungeprüft.
 - Stimmübertragung/Vollmacht-Formular: noch Platzhalter, Vorlage folgt
