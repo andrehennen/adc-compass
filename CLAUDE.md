@@ -85,6 +85,7 @@ immer transparent machen, ob die Adresse bestätigt oder nur abgeleitet ist. **N
 
 - **Modellwahl:** Vor dem Start komplexerer Aufgaben prüfen, welches Modell am besten passt (z. B. Opus für Architektur, große Umbauten, knifflige Fehler; Sonnet für Routine-Änderungen; Haiku für Kleinkram). Läuft es schon, weitermachen. Wenn nicht, stoppen und den Wechsel vorschlagen (klickbar im Chat).
 - Offene Fragen immer im Chat als klickbare Auswahl stellen.
+- **Notion und ClickUp in diesem Repo niemals nutzen** (weder lesen noch schreiben, auch nicht als Speicher oder Notizablage).
 - Kein Build-Step – einfach `index.html` editieren, committen, pushen.
 - **Standardregel (wie im Dashboard-Repo): Jede Änderung am Kompass wird committet und gepusht**, ohne
   nachzufragen. Danach kurz sagen, was sich geändert hat. (Von André am 3.10.2026 so festgelegt.)
