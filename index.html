@@ -362,10 +362,10 @@
             </g>
           </g>
         </svg>
-        <button class="rose-pt active" aria-pressed="true" data-tab="sektionen" data-deg="0"><span class="pt-ic" aria-hidden="true">📍</span><span class="sub-label">Sektionen</span></button>
-        <button class="rose-pt" aria-pressed="false" data-tab="fachbereiche" data-deg="90"><span class="pt-ic" aria-hidden="true">🎨</span><span class="sub-label">Fachbereiche</span></button>
-        <button class="rose-pt" aria-pressed="false" data-tab="initiativen" data-deg="180"><span class="pt-ic" aria-hidden="true">💡</span><span class="sub-label">Ideen &amp; Initiativen</span></button>
-        <button class="rose-pt" aria-pressed="false" data-tab="ressourcen" data-deg="270"><span class="pt-ic" aria-hidden="true">🗂️</span><span class="sub-label">Büro &amp; Ressourcen</span></button>
+        <button type="button" class="rose-pt active" aria-pressed="true" data-tab="sektionen" data-deg="0"><span class="pt-ic" aria-hidden="true">📍</span><span class="sub-label">Sektionen</span></button>
+        <button type="button" class="rose-pt" aria-pressed="false" data-tab="fachbereiche" data-deg="90"><span class="pt-ic" aria-hidden="true">🎨</span><span class="sub-label">Fachbereiche</span></button>
+        <button type="button" class="rose-pt" aria-pressed="false" data-tab="initiativen" data-deg="180"><span class="pt-ic" aria-hidden="true">💡</span><span class="sub-label">Ideen &amp; Initiativen</span></button>
+        <button type="button" class="rose-pt" aria-pressed="false" data-tab="ressourcen" data-deg="270"><span class="pt-ic" aria-hidden="true">🗂️</span><span class="sub-label">Büro &amp; Ressourcen</span></button>
       </div>
     </nav>
   </div>
@@ -431,9 +431,9 @@
     <h2 class="panel-title">Büro &amp; Ressourcen</h2>
     <p class="intro-line">Verwaltung, Formulare und CI – alles rund um e.&nbsp;V. und GmbH.</p>
     <div class="subnav">
-      <button class="subnav-btn active" aria-pressed="true" data-sub="buero">ADC Büro</button>
-      <button class="subnav-btn" aria-pressed="false" data-sub="formulare">Formulare</button>
-      <button class="subnav-btn" aria-pressed="false" data-sub="ci">ADC CI</button>
+      <button type="button" class="subnav-btn active" aria-pressed="true" data-sub="buero">ADC Büro</button>
+      <button type="button" class="subnav-btn" aria-pressed="false" data-sub="formulare">Formulare</button>
+      <button type="button" class="subnav-btn" aria-pressed="false" data-sub="ci">ADC CI</button>
     </div>
 
     <div class="subpanel active" id="sub-buero">
@@ -538,10 +538,10 @@
 </footer>
 
 <nav class="dock" id="dock" aria-label="Schnellnavigation">
-  <button class="dock-btn active" data-tab="sektionen" aria-label="Sektionen" title="Sektionen">📍</button>
-  <button class="dock-btn" data-tab="fachbereiche" aria-label="Fachbereiche" title="Fachbereiche">🎨</button>
-  <button class="dock-btn" data-tab="initiativen" aria-label="Ideen &amp; Initiativen" title="Ideen &amp; Initiativen">💡</button>
-  <button class="dock-btn" data-tab="ressourcen" aria-label="Büro &amp; Ressourcen" title="Büro &amp; Ressourcen">🗂️</button>
+  <button type="button" class="dock-btn active" data-tab="sektionen" aria-label="Sektionen" title="Sektionen">📍</button>
+  <button type="button" class="dock-btn" data-tab="fachbereiche" aria-label="Fachbereiche" title="Fachbereiche">🎨</button>
+  <button type="button" class="dock-btn" data-tab="initiativen" aria-label="Ideen &amp; Initiativen" title="Ideen &amp; Initiativen">💡</button>
+  <button type="button" class="dock-btn" data-tab="ressourcen" aria-label="Büro &amp; Ressourcen" title="Büro &amp; Ressourcen">🗂️</button>
 </nav>
 <label class="haptic" id="haptic" aria-hidden="true"><input type="checkbox" switch tabindex="-1"></label>
 
@@ -668,6 +668,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.8.3", date:"6. Nov. 2026", text:"Technische Pflege: alle Knöpfe sauber als Knöpfe ausgezeichnet (QA)."},
   {v:"1.8.2", date:"6. Nov. 2026", text:"Flächen in einem hellen, warmen Ton wie in der ADC Lounge."},
   {v:"1.8.1", date:"6. Nov. 2026", text:"Ansprechpartner:innen im Büro übersichtlicher: Bereiche in ausgeglichenen Spalten, Name, Rolle und Durchwahl je in eigener Zeile, Telefonnummern ohne Umbruch."},
   {v:"1.8.0", date:"6. Nov. 2026", text:"Büro &amp; Ressourcen: alle Ansprechpartner:innen im ADC Büro nach Bereichen, mit Durchwahl (Stand adc.de/kontakt). PR &amp; Marketing aktualisiert."},
