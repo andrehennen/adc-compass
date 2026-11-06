@@ -56,9 +56,10 @@ beim Scrollen markiert die Stadtkarte in der Bildmitte ihren Pin.
 
 ## Design-Entscheidungen (bitte respektieren)
 
+- **Farbe (seit 6.11.2026, gilt für Lounge, Mitmachen und Verein):** Schwarz-Weiß plus genau ein warmer Flächenton `--soft: #f3f1ec`, nur als Fläche, nie für Schrift oder Rahmen. Weiß ist Hauptinhalt, getönt heißt „gehört zusammen“ oder „Hinweis“. Höchstens 1–2 getönte Flächen pro Screen, Listen bleiben weiß mit Linien. „Wichtig“ = Fläche plus kleines schwarzes Label, keine eigene Farbe. Einzige Signalfarbe bleibt Gelb für „Heute“.
 - **Grundregel: einfach und zugänglich vor Funktionsfülle** (André, 6.11.2026, hohe Priorität): Lieber weniger anbieten als Screens überladen, sonst verlieren wir die Mitglieder. Vor jeder neuen Funktion fragen: Braucht das die Mehrheit? Was fällt dafür weg oder wandert eine Ebene tiefer (eingeklappt, Unterseite)? Pro Screen eine Hauptaufgabe. Gute Ideen dürfen warten.
 - **Gleiches Design-System wie das ADC Dashboard** (seit v1.4.0, Okt. 2026 – vorher schwarz mit Poppins),
-  orientiert an adc.de. Tokens 1:1 aus dem Dashboard: `--bg:#fff`, `--soft:#f4f4f2`, `--line:#e2e2df`,
+  orientiert an adc.de. Tokens 1:1 aus dem Dashboard: `--bg:#fff`, `--soft:#f3f1ec`, `--line:#e2e2df`,
   `--line-strong:#c9c9c5`, `--ink:#0a0a0a`, `--ink-2:#3d3d3d`, `--ink-3:#6b6b6b`, `--radius:12px`.
   Pill-Buttons (999px, 1.5px Ink-Border), sticky Kopfleiste mit Blur, Kicker-Labels 12px/700/uppercase.
 - **Farben:** Schwarz/Weiß/Grau. Die Akzentpalette (`--c-coral` etc., `accent` in den Daten) ist definiert,
