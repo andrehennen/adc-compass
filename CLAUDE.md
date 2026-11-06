@@ -114,6 +114,7 @@ immer transparent machen, ob die Adresse bestätigt oder nur abgeleitet ist. **N
 - ADC Talents: Sarah Köster (Sprecherin) und Etienne Wagner (Vize), beratend im Präsidium ohne Stimmrecht (Quellen: adc.de 11/2024, PAGE 05/2025).
 - Neue Präsidiumsmitglieder (Sina Otto, Nina Wiemer, Till Diestel, Julius Winter): E-Mails nur musterbasiert. Rollen per Web-Recherche (Okt. 2026) ergänzt und von André bestätigt.
 - Dörte Spengler-Ahrens nur noch bei LADC; ihre Adresse `doerte.spenglerahrens@adc.de` (weicht vom Muster ab) ist ungeprüft.
+- Büro-Team (Karte „Ansprechpartner:innen im Büro“, seit 1.8.0) nach https://www.adc.de/kontakt/, Stand 6.11.2026. Jan Schäfer steht dort als `jan.schaefer@aedc.de` (Tippfehler auf adc.de), hier musterbasiert `jan.schaefer@adc.de`. Ines Margreiter ist über `buchhaltung@adc.de` erreichbar (so auf adc.de).
 - Stimmübertragung/Vollmacht-Formular: noch Platzhalter, Vorlage folgt
 - Mitgliedschafts-PDFs: Stand 2020, Namen teils veraltet – Update angekündigt
 - Private vs. Public Repo: noch offene Entscheidung (gilt auch für Schwester-Projekt `adc`)
