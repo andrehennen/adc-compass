@@ -255,7 +255,16 @@
   }
 
   .buero-hero{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-  .card .team-g{margin-top:22px;}
+  .card.team{grid-column:1/-1;}
+  .team-grid{columns:3 250px;column-gap:28px;margin-top:14px;}
+  .team-col{display:flex;flex-direction:column;gap:10px;min-width:0;break-inside:avoid;margin-bottom:24px;}
+  .team-col .role{margin:0 0 2px;padding-bottom:6px;border-bottom:1px solid var(--line);}
+  .tp{display:flex;flex-direction:column;gap:1px;min-width:0;}
+  .tp-n{font-weight:600;color:var(--ink);text-decoration:underline;text-decoration-color:var(--line-strong);text-decoration-thickness:1.5px;text-underline-offset:3px;align-self:flex-start;}
+  .tp-n:hover{text-decoration-color:var(--ink);}
+  .tp-r{font-size:14px;color:var(--ink-2);text-wrap:pretty;hyphens:auto;}
+  .tp-t{font-size:14px;color:var(--ink-3);white-space:nowrap;align-self:flex-start;font-variant-numeric:tabular-nums;}
+  .card.team > p{text-wrap:pretty;max-width:70ch;}
   @media(max-width:720px){.buero-hero{grid-template-columns:1fr;}}
   .subnav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 18px;}
   .subnav-btn{
@@ -441,32 +450,48 @@
             <a class="cta secondary" href="https://www.adc.de/kontakt/" target="_blank" rel="noopener">Kontaktformular</a>
           </div>
         </div>
-        <div class="card team" style="--accent:var(--c-pink);grid-column:1/-1">
+        <div class="card team" style="--accent:var(--c-pink)">
           <div class="icon-wrap" aria-hidden="true">👋</div>
           <h3>Ansprechpartner:innen im Büro</h3>
-          <p>Zentrale: <a href="tel:+493059003100">(030) 590 03 10-0</a> · <a href="mailto:adc@adc.de">adc@adc.de</a>. Mitgliedschaft: <a href="mailto:mitglieder@adc.de">mitglieder@adc.de</a>, <a href="tel:+4930590031032">(030) 590 0310-32</a>. Stand: <a href="https://www.adc.de/kontakt/" target="_blank" rel="noopener">adc.de/kontakt</a>, November 2026.</p>
-          <div class="role team-g">Leitung</div>
-          <div class="contact-line"><span class="who"><a href="mailto:klaus.graeff@adc.de">Klaus Gräff</a></span><span class="what">– Geschäftsführender Vorstand</span></div>
-          <div class="contact-line"><span class="who"><a href="mailto:huelya.sert@adc.de">Hülya Sert</a></span><span class="what">– Prokuristin</span></div>
-          <div class="role team-g">Programm</div>
-          <div class="contact-line"><span class="who"><a href="mailto:lea.feldkaemper@adc.de">Lea Feldkämper</a></span><span class="what">– Head of Program · <a href="tel:+493059003133">(030) 590 0310-33</a></span></div>
-          <div class="role team-g">Mitglieder, Partnerschaften &amp; Ticketing</div>
-          <div class="contact-line"><span class="who"><a href="mailto:valentin.goetz@adc.de">Valentin Götz</a></span><span class="what">– Projektmanager Partnerschaften, Ticketing &amp; Mitglieder</span></div>
-          <div class="role team-g">Wettbewerb &amp; Jury</div>
-          <div class="contact-line"><span class="who"><a href="mailto:frane.skaro@adc.de">Frane Skaro</a></span><span class="what">– Senior Projektmanager Wettbewerbe &amp; Jury · <a href="tel:+493059003154">(030) 590 0310-54</a></span></div>
-          <div class="contact-line"><span class="who"><a href="mailto:leo.schott@adc.de">Leo Schott</a></span><span class="what">– Projektmanager Wettbewerb &amp; Jury · <a href="tel:+493059003155">(030) 590 0310-55</a></span></div>
-          <div class="contact-line"><span class="who"><a href="mailto:jan.schaefer@adc.de">Jan Schäfer</a></span><span class="what">– Projektmanager Wettbewerb &amp; Jury</span></div>
-          <div class="contact-line"><span class="who"><a href="mailto:constantin.bohn@adc.de">Constantin Bohn</a></span><span class="what">– Projektmanager Wettbewerb &amp; Jury</span></div>
-          <div class="contact-line"><span class="who"><a href="mailto:sabine.deletombe@adc.de">Sabine Deletombe</a></span><span class="what">– Werkstudentin Wettbewerb &amp; Jury</span></div>
-          <div class="role team-g">PR &amp; Marketing</div>
-          <div class="contact-line"><span class="who"><a href="mailto:natalia.gette@adc.de">Natalia Gette</a></span><span class="what">– Senior Projektmanagerin PR/Marketing · <a href="tel:+493059003135">(030) 590 0310-35</a></span></div>
-          <div class="contact-line"><span class="who"><a href="mailto:michele.mannschatz@adc.de">Michèle Mannschatz</a></span><span class="what">– Projektmanagerin PR &amp; Marketing</span></div>
-          <div class="role team-g">Seminare &amp; Festival</div>
-          <div class="contact-line"><span class="who"><a href="mailto:constanze.henrichs@adc.de">Constanze Henrichs</a></span><span class="what">– Werkstudent Wettbewerb/Seminare</span></div>
-          <div class="contact-line"><span class="who"><a href="mailto:sarah.kreusch@adc.de">Sarah Kreusch</a></span><span class="what">– Praktikantin Festival</span></div>
-          <div class="role team-g">Finanzen &amp; Personal</div>
-          <div class="contact-line"><span class="who"><a href="mailto:marion.fichtelmann@adc.de">Marion Fichtelmann</a></span><span class="what">– Controlling / HR · <a href="tel:+493059003134">(030) 590 0310-34</a></span></div>
-          <div class="contact-line"><span class="who"><a href="mailto:buchhaltung@adc.de">Ines Margreiter</a></span><span class="what">– Buchhaltung · <a href="tel:+493059003120">(030) 590 0310-20</a></span></div>
+          <p>Zentrale: <a href="tel:+493059003100">(030)&nbsp;590&nbsp;03&nbsp;10-0</a> · <a href="mailto:adc@adc.de">adc@adc.de</a>. Mitgliedschaft: <a href="mailto:mitglieder@adc.de">mitglieder@adc.de</a>, <a href="tel:+4930590031032">(030)&nbsp;590&nbsp;0310-32</a>. Stand:&nbsp;<a href="https://www.adc.de/kontakt/" target="_blank" rel="noopener">adc.de/kontakt</a>, November 2026.</p>
+          <div class="team-grid">
+            <div class="team-col">
+              <div class="role">Leitung</div>
+              <div class="tp"><a class="tp-n" href="mailto:klaus.graeff@adc.de">Klaus Gräff</a><span class="tp-r">Geschäftsführender Vorstand</span></div>
+              <div class="tp"><a class="tp-n" href="mailto:huelya.sert@adc.de">Hülya Sert</a><span class="tp-r">Prokuristin</span></div>
+            </div>
+            <div class="team-col">
+              <div class="role">Programm</div>
+              <div class="tp"><a class="tp-n" href="mailto:lea.feldkaemper@adc.de">Lea Feldkämper</a><span class="tp-r">Head of Program</span><a class="tp-t" href="tel:+493059003133">(030)&nbsp;590&nbsp;0310-33</a></div>
+            </div>
+            <div class="team-col">
+              <div class="role">Mitglieder, Partnerschaften &amp; Ticketing</div>
+              <div class="tp"><a class="tp-n" href="mailto:valentin.goetz@adc.de">Valentin Götz</a><span class="tp-r">Projektmanager Partnerschaften, Ticketing &amp; Mitglieder</span></div>
+            </div>
+            <div class="team-col">
+              <div class="role">Wettbewerb &amp; Jury</div>
+              <div class="tp"><a class="tp-n" href="mailto:frane.skaro@adc.de">Frane Skaro</a><span class="tp-r">Senior Projektmanager Wettbewerbe &amp; Jury</span><a class="tp-t" href="tel:+493059003154">(030)&nbsp;590&nbsp;0310-54</a></div>
+              <div class="tp"><a class="tp-n" href="mailto:leo.schott@adc.de">Leo Schott</a><span class="tp-r">Projektmanager Wettbewerb &amp; Jury</span><a class="tp-t" href="tel:+493059003155">(030)&nbsp;590&nbsp;0310-55</a></div>
+              <div class="tp"><a class="tp-n" href="mailto:jan.schaefer@adc.de">Jan Schäfer</a><span class="tp-r">Projektmanager Wettbewerb &amp; Jury</span></div>
+              <div class="tp"><a class="tp-n" href="mailto:constantin.bohn@adc.de">Constantin Bohn</a><span class="tp-r">Projektmanager Wettbewerb &amp; Jury</span></div>
+              <div class="tp"><a class="tp-n" href="mailto:sabine.deletombe@adc.de">Sabine Deletombe</a><span class="tp-r">Werkstudentin Wettbewerb &amp; Jury</span></div>
+            </div>
+            <div class="team-col">
+              <div class="role">PR &amp; Marketing</div>
+              <div class="tp"><a class="tp-n" href="mailto:natalia.gette@adc.de">Natalia Gette</a><span class="tp-r">Senior Projektmanagerin PR/Marketing</span><a class="tp-t" href="tel:+493059003135">(030)&nbsp;590&nbsp;0310-35</a></div>
+              <div class="tp"><a class="tp-n" href="mailto:michele.mannschatz@adc.de">Michèle Mannschatz</a><span class="tp-r">Projektmanagerin PR &amp; Marketing</span></div>
+            </div>
+            <div class="team-col">
+              <div class="role">Seminare &amp; Festival</div>
+              <div class="tp"><a class="tp-n" href="mailto:constanze.henrichs@adc.de">Constanze Henrichs</a><span class="tp-r">Werkstudent Wettbewerb/Seminare</span></div>
+              <div class="tp"><a class="tp-n" href="mailto:sarah.kreusch@adc.de">Sarah Kreusch</a><span class="tp-r">Praktikantin Festival</span></div>
+            </div>
+            <div class="team-col">
+              <div class="role">Finanzen &amp; Personal</div>
+              <div class="tp"><a class="tp-n" href="mailto:marion.fichtelmann@adc.de">Marion Fichtelmann</a><span class="tp-r">Controlling / HR</span><a class="tp-t" href="tel:+493059003134">(030)&nbsp;590&nbsp;0310-34</a></div>
+              <div class="tp"><a class="tp-n" href="mailto:buchhaltung@adc.de">Ines Margreiter</a><span class="tp-r">Buchhaltung</span><a class="tp-t" href="tel:+493059003120">(030)&nbsp;590&nbsp;0310-20</a></div>
+            </div>
+          </div>
         </div>
         <div class="card" style="--accent:var(--c-sky)">
           <div class="icon-wrap" aria-hidden="true">🤝</div>
@@ -643,6 +668,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.8.1", date:"6. Nov. 2026", text:"Ansprechpartner:innen im Büro übersichtlicher: Bereiche in ausgeglichenen Spalten, Name, Rolle und Durchwahl je in eigener Zeile, Telefonnummern ohne Umbruch."},
   {v:"1.8.0", date:"6. Nov. 2026", text:"Büro &amp; Ressourcen: alle Ansprechpartner:innen im ADC Büro nach Bereichen, mit Durchwahl (Stand adc.de/kontakt). PR &amp; Marketing aktualisiert."},
   {v:"1.7.0", date:"17. Okt. 2026", text:"ADC Talents: Einbindung ins Präsidium, Gastrechte und Vorhaben ergänzt. Burkhard Müller als bestätigter Präsidiumssprecher wieder eingetragen."},
   {v:"1.6.8", date:"13. Okt. 2026", text:"Ideen &amp; Initiativen alphabetisch sortiert; die Dashboard-Kachel heißt jetzt „ADC Dashboard“."},
