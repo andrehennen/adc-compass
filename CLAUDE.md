@@ -1,6 +1,6 @@
 # ADC Kompass – Projektkontext für Claude Code
 
-> **Abgelöst am 8.11.2026:** Der Kompass ist jetzt „Verein“ in der ADC Lounge, gearbeitet wird nur noch im Repo `andrehennen/adc-lounge` (`public/verein/`). Die Seite hier leitet zur Lounge weiter (`vercel.json`), das Repo wird archiviert. Die Regeln unten gelten sinngemäß in `adc-lounge/docs/kompass.md`.
+> **Abgelöst am 8.11.2026:** Der Kompass ist jetzt „Verein“ in der ADC Lounge, gearbeitet wird nur noch im Repo `andrehennen/adc-lounge` (`public/verein/`). Die Seite hier leitet zur Lounge weiter (`vercel.json`), das Repo wird archiviert, sobald der Umzug auf den ADC-Server fertig ist. Die Regeln unten gelten sinngemäß in `adc-lounge/docs/kompass.md`.
 
 Single-Page-Orientierungstool für neue/bestehende ADC-Mitglieder: zeigt Sektionen (Städte),
 Fachbereiche (Disziplinen), Initiativen/Ideen und "Büro & Ressourcen" (Kontakte, Formulare, CI).
