@@ -66,5 +66,32 @@
       ]
     }
   ],
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/ci/:datei*",
+      "destination": "https://andrehennen.com/adc-lounge/verein/ci/:datei*",
+      "permanent": false
+    },
+    {
+      "source": "/formulare/:datei*",
+      "destination": "https://andrehennen.com/adc-lounge/verein/formulare/:datei*",
+      "permanent": false
+    },
+    {
+      "source": "/datenschutz",
+      "destination": "https://andrehennen.com/adc-lounge/datenschutz.html",
+      "permanent": false
+    },
+    {
+      "source": "/impressum",
+      "destination": "https://www.adc.de/impressum/",
+      "permanent": false
+    },
+    {
+      "source": "/((?!ci/|formulare/).*)",
+      "destination": "https://andrehennen.com/adc-lounge/verein/",
+      "permanent": false
+    }
+  ]
 }
