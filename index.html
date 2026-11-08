@@ -131,14 +131,15 @@
   .rose-svg .cardinal{stroke:var(--ink);stroke-width:1.5;stroke-linecap:round;}
   .needle, .needle-sway{transform-origin:150px 150px;}
   .needle{transition:transform .5s var(--spring);animation:needleIn 1.1s var(--bounce) .25s backwards;}
-  .needle.turn{transition:transform .7s var(--bounce);}
   @keyframes needleIn{from{transform:rotate(-70deg);}}
   /* ruhiges, durchgehendes Schweben um die Zielrichtung – zeigt, dass die Nadel sich bewegen lässt */
   .needle-sway{animation:sway 3.6s ease-in-out 1.4s infinite alternate;}
   @keyframes sway{from{transform:rotate(-2.5deg);}to{transform:rotate(2.5deg);}}
-  .needle polygon.n-half{fill:var(--ink);}
-  .needle polygon.s-half{fill:var(--line-strong);}
+  /* Nadel mit Licht von oben links: linke Facette heller, rechte dunkler; Nabe mit Glanzpunkt */
+  .needle .n-hell{fill:#3a3a3a;} .needle .n-dunkel{fill:var(--ink);}
+  .needle .s-hell{fill:#e4e4e1;} .needle .s-dunkel{fill:#c4c4c0;}
   .needle circle.hub{fill:#fff;stroke:var(--ink);stroke-width:1.5;}
+  .needle .hub-glanz{fill:#fff;opacity:.9;}
 
   /* Der Button selbst bleibt starr (stabile Trefferfläche, Label bewegt sich nicht) – nur der Kreis .pt-ic reagiert */
   .rose-pt{
@@ -354,11 +355,15 @@
       <svg class="rose-svg" viewBox="0 0 300 300" aria-hidden="true">
           <circle class="ticks" cx="150" cy="150" r="72"/>
           <path class="cardinal" d="M150 72v10M228 150h-10M150 228v-10M72 150h10"/>
+          <defs><filter id="nadel-schatten" x="-50%" y="-20%" width="200%" height="140%"><feDropShadow dx="0" dy=".8" stdDeviation="1.2" flood-color="#282c3c" flood-opacity=".35"/></filter></defs>
           <g class="needle" id="needle">
-            <g class="needle-sway">
-              <polygon class="n-half" points="150,87 155.5,150 144.5,150"/>
-              <polygon class="s-half" points="150,213 155.5,150 144.5,150"/>
-              <circle class="hub" cx="150" cy="150" r="4"/>
+            <g class="needle-sway" filter="url(#nadel-schatten)">
+              <polygon class="n-hell" points="150,87 150,150 144.5,150"/>
+              <polygon class="n-dunkel" points="150,87 155.5,150 150,150"/>
+              <polygon class="s-hell" points="150,213 150,150 144.5,150"/>
+              <polygon class="s-dunkel" points="150,213 155.5,150 150,150"/>
+              <circle class="hub" cx="150" cy="150" r="5"/>
+              <circle class="hub-glanz" id="hub-glanz" cx="148.6" cy="148.6" r="1.6"/>
             </g>
           </g>
         </svg>
@@ -668,6 +673,7 @@ render('grid-ci', [
 
 /* ---------- Version & Changelog: neuester Eintrag zuerst, der oberste ist die aktuelle Version ---------- */
 const changelog = [
+  {v:"1.9.0", date:"8. Nov. 2026", text:"Kompassnadel mit Licht und Schatten, schwingt wie eine echte Magnetnadel aus und rastet spürbar ein."},
   {v:"1.8.3", date:"6. Nov. 2026", text:"Technische Pflege: alle Knöpfe sauber als Knöpfe ausgezeichnet (QA)."},
   {v:"1.8.2", date:"6. Nov. 2026", text:"Flächen in einem hellen, warmen Ton wie in der ADC Lounge."},
   {v:"1.8.1", date:"6. Nov. 2026", text:"Ansprechpartner:innen im Büro übersichtlicher: Bereiche in ausgeglichenen Spalten, Name, Rolle und Durchwahl je in eigener Zeile, Telefonnummern ohne Umbruch."},
@@ -711,6 +717,33 @@ function haptic(){
   }catch(e){}
 }
 
+/* ---------- Nadel: schwingt wie eine Magnetnadel über das Ziel hinaus, pendelt gedämpft aus und rastet ein ----------
+   Start dort, wo sie gerade steht (auch aus der Hover-Neigung). Haptik: ein Tick je 45° Weg, einer beim Einrasten. */
+const ruhig = matchMedia('(prefers-reduced-motion: reduce)');
+function dreheNadel(ziel){
+  const von = parseFloat((needle.style.transform.match(/-?[\d.]+/) || [needleDeg])[0]), weg = ziel - von;
+  needleDeg = ziel;
+  needle.style.transform = `rotate(${ziel}deg)`;
+  if(ruhig.matches || !needle.animate || !weg) return;
+  const dauer = 650 + Math.abs(weg) * 2.2;
+  needle.style.transition = 'none';   // sonst überdeckt die CSS-Transition die Animation
+  needle.getAnimations().forEach(a => a.cancel());
+  const r = d => ({transform: `rotate(${d}deg)`});
+  needle.animate([
+    {...r(von), easing: 'cubic-bezier(.45,0,.2,1)'},
+    {...r(ziel + weg * .11), offset: .42, easing: 'ease-in-out'},
+    {...r(ziel - weg * .045), offset: .64, easing: 'ease-in-out'},
+    {...r(ziel + weg * .015), offset: .82, easing: 'ease-in-out'},
+    r(ziel)
+  ], {duration: dauer}).onfinish = () => {
+    needle.style.transition = '';
+    haptic();
+    document.getElementById('hub-glanz').animate([{opacity: .9}, {opacity: 1, transform: 'scale(1.8)', transformOrigin: '148.6px 148.6px'}, {opacity: .9}], {duration: 450, easing: 'ease-out'});
+  };
+  const ticks = Math.floor(Math.abs(weg) / 45);
+  for(let k = 1; k <= ticks; k++) setTimeout(haptic, dauer * .42 * k / (ticks + 1));
+}
+
 /* ---------- Navigation: Rose, Dock, Unterreiter, URL-Hash ---------- */
 const TABS = $$('.rose-pt').map(b=>b.dataset.tab);
 const SUBS = $$('.subnav-btn').map(b=>b.dataset.sub);
@@ -727,9 +760,7 @@ function setTab(tab, {scroll=false, updateHash=true} = {}){
   $$('.dock-btn').forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
   $$('.panel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+tab));
   // Nadel nimmt immer den kürzeren Weg
-  needleDeg += needleDiff(btn);
-  needle.classList.add('turn');
-  needle.style.transform = `rotate(${needleDeg}deg)`;
+  dreheNadel(needleDeg + needleDiff(btn));
   currentTab = tab;
   if(updateHash) writeHash();
   if(scroll) document.getElementById('panel-'+tab).scrollIntoView({block:'start'});
@@ -756,7 +787,6 @@ $$('.rose-pt').forEach(btn=>{
   // Maus über einem anderen Bereich: Nadel neigt sich schon mal dorthin
   btn.addEventListener('pointerenter', e=>{
     if(e.pointerType!=='mouse' || btn.dataset.tab===currentTab) return;
-    needle.classList.remove('turn');
     needle.style.transform = `rotate(${needleDeg + Math.max(-16, Math.min(16, needleDiff(btn)))}deg)`;
   });
   btn.addEventListener('pointerleave', e=>{ if(e.pointerType==='mouse') needle.style.transform = `rotate(${needleDeg}deg)`; });
